@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="header-nav-container">
+      <header>
+        <img
+          src="images/index/logo/coffee-cup.png"
+          alt="webpage-logo"
+          loading="lazy"
+        />
+        <h1 class="web-name">UrKofi</h1>
+      </header>
+      <nav class="webpage-navigation">
+        <ul id="navigation-menu">
+          <li><a href="#" class="nav-links">Home</a></li>
+          <li><a href="coffeeBeans.html" class="nav-links">Coffee Beans</a></li>
+          <li><a href="service.html" class="nav-links">Services</a></li>
+          <li><a href="aboutus.html" class="nav-links">About Us</a></li>
+          <li>
+            <p>
+              <a class="to-login-html-button">Login</a> or
+              <a href="signup.html" class="to-register-html-button">Sign up</a>
+            </p>
+          </li>
+        </ul>
+        <div class="user-container">
+          <div>
+            <span>Hi</span>
+            <p class="logged-in-user">Guest</p>
+          </div>
+          <button type="button" class="logout-button">Sign out</button>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <section class="first-section-container">
+        <div class="first-section-container-text">
+          <h2>Welcome to the Coffee Lovers' Paradise!</h2>
+          <p>
+            Your morning coffee ahead. Roasted and served fresh every morning.
+            Once you've tried our premium blends, you'll be coming back for
+            more!
+          </p>
+        </div>
+        <div class="first-section-container-link">
+          <p>Click button below to order now</p>
+          <a href="coffeeBeans.html#sale-products">Order now</a>
+        </div>
+      </section>
+
+      <section class="second-section-container">
+        <div class="second-section-container-text">
+          <h2>A coffee for everyone</h2>
+          <p>Choose your coffee from our wide selection of premium blends.</p>
+          <ul class="coffee-selection">
+            <li>
+              <button
+                type="button"
+                data-target="espresso"
+                class="coffee-selections currentSelected"
+              >
+                Espresso
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="ristretto"
+                class="coffee-selections"
+              >
+                Ristretto
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="lungo"
+                class="coffee-selections"
+              >
+                Lungo
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="doppio"
+                class="coffee-selections"
+              >
+                Doppio
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="redeye"
+                class="coffee-selections"
+              >
+                Red eye
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="americano"
+                class="coffee-selections"
+              >
+                Americano
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="latte"
+                class="coffee-selections"
+              >
+                Latte
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="cappuccino"
+                class="coffee-selections"
+              >
+                Cappuccino
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="flatwhite"
+                class="coffee-selections"
+              >
+                Flat white
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="cafeaulait"
+                class="coffee-selections"
+              >
+                Cafe Au Lait
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="cortado"
+                class="coffee-selections"
+              >
+                Cortado
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="macchiato"
+                class="coffee-selections"
+              >
+                Macchiato
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                data-target="mocha"
+                class="coffee-selections"
+              >
+                Mocha
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="coffee-selection-text selectedCoffee activeCoffee"
+          id="espresso"
+        >
+          <h3>Espresso</h3>
+          <p class="coffee-text">
+            Made by forcing a small amount of nearly boiling water quickly
+            through finely-ground coffee beans under high pressure just for you.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/espresso1.jpg"
+              alt="espresso 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/espresso2.jpg"
+              alt="espresso 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="ristretto">
+          <h3>Ristretto</h3>
+          <p class="coffee-text">
+            A short shot of espresso made with finely ground beans and less
+            water made just for you. More concentrated than a regular espresso.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/ristretto1.jpg"
+              alt="ristretto 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/ristretto2.jpg"
+              alt="ristretto 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="lungo">
+          <h3>Lungo</h3>
+          <p class="coffee-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            suscipit beatae hic eaque voluptatem enim perspiciatis optio
+            blanditiis dolorum illo quos quisquam cum architecto porro, id rerum
+            ab, accusamus repellendus? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Voluptate suscipit beatae hic eaque voluptatem
+            enim perspiciatis optio blanditiis dolorum illo quos quisquam cum
+            architecto porro, id rerum ab, accusamus repellendus?
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/lungo1.jpg"
+              alt="lungo 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/lungo2.jpg"
+              alt="lungo 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="doppio">
+          <h3>Doppio</h3>
+          <p class="coffee-text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Culpa consequatur incidunt assumenda
+            id.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Culpa consequatur incidunt assumenda
+            id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/doppio1.jpg"
+              alt="doppio 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/doppio2.png"
+              alt="doppio 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="redeye">
+          <h3>Red Eye</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/redeye1.jpg"
+              alt="red eye 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/redeye2.jpg"
+              alt="red eye 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="americano">
+          <h3>Americano</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/americano1.jpg"
+              alt="americano 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/americano2.jpg"
+              alt="americano 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="latte">
+          <h3>Latte</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/latte1.jpg"
+              alt="latte 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/latte2.jpg"
+              alt="latte 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="cappuccino">
+          <h3>Cappuccino</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/cappuccino1.jpg"
+              alt="cappuccino 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/cappuccino2.jpeg"
+              alt="cappuccino 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="flatwhite">
+          <h3>Flat White</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/flatwhite1.jpg"
+              alt="flat white 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/flatwhite2.jpg"
+              alt="flat white 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="cafeaulait">
+          <h3>Cafe Au Lait</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/cafeaulait1.jpg"
+              alt="cafe au lait 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/cafeaulait2.jpg"
+              alt="cafe au lait 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="cortado">
+          <h3>Cortado</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/cortado1.jpg"
+              alt="cortado 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/cortado2.jpg"
+              alt="cortado 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="macchiato">
+          <h3>Macchiato</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/machiato1.jpg"
+              alt="macchiato 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/machiato2.jpg"
+              alt="macchiato 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="coffee-selection-text" id="mocha">
+          <h3>Mocha</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Culpa consequatur incidunt assumenda
+            id. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Culpa consequatur incidunt assumenda
+            id. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Culpa consequatur incidunt assumenda
+            id. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa
+            consequatur incidunt assumenda id.
+          </p>
+          <div class="coffee-selection-text-images" id="mocha-images">
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/mocha1.jpg"
+              alt="mocha 1"
+              loading="lazy"
+            />
+            <img
+              class="coffee-images"
+              src="./images/index/secondSection/mocha2.jpeg"
+              alt="mocha 2"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+      <div class="mobile-slider-dots"></div>
+      <section class="third-section-container">
+        <h2>Brew Your Coffee</h2>
+        <div class="third-sub-container">
+          <div class="third-process-container">
+            <img
+              src="./images/index/thirdSection/clock-svgrepo-com.svg"
+              alt="clock image"
+              loading="lazy"
+            />
+            <p>Brew time: 2:30 - 3:30 minutes</p>
+            <img
+              src="./images/index/thirdSection/coffee-beans-svgrepo-com.svg"
+              alt="beans image"
+              loading="lazy"
+            />
+            <p>Coffee dose: 20 - 27 grams</p>
+            <img
+              src="./images/index/thirdSection/coffee-grinder-grinder-machine-svgrepo-com.svg"
+              alt="coffee grinder image"
+              loading="lazy"
+            />
+            <p>Grind size: medium</p>
+            <img
+              src="./images/index/thirdSection/kettle-pot-drink-svgrepo-com.svg"
+              alt="kettle image"
+              loading="lazy"
+            />
+            <p>Water: 350 grams</p>
+          </div>
+          <div class="third-section-center-image">
+            <img
+              src="./images/index/thirdSection/urkofi.png"
+              alt="coffee cup"
+              loading="lazy"
+            />
+          </div>
+          <div class="third-method-container">
+            <h3>How To Do Pour-over</h3>
+            <ul>
+              <li>
+                <h4>1. Heat the water</h4>
+                <p>
+                  Heat water to 92–96°C (195–205°F). Just below boiling is
+                  ideal.
+                </p>
+              </li>
+              <li>
+                <h4>2. Grind the coffee</h4>
+                <p>
+                  Use a medium-fine grind (similar to sea salt). Ratio: 1:15 to
+                  1:17. Example: 20g coffee : 300ml water.
+                </p>
+              </li>
+              <li>
+                <h4>3.Rinse the filter</h4>
+                <p>
+                  Place the filter in the dripper. Rinse with hot water to
+                  remove paper taste and preheat. Discard rinse water.
+                </p>
+              </li>
+              <li>
+                <h4>4.Add coffee grounds</h4>
+                <p>
+                  Add ground coffee to the filter. Gently shake to level the
+                  bed.
+                </p>
+              </li>
+              <li>
+                <h4>5.Bloom (30–45 seconds)</h4>
+                <p>
+                  Pour 2–3 times the coffee weight in water (e.g., 40–60ml for
+                  20g coffee). Let it sit to release trapped CO₂. This improves
+                  extraction.
+                </p>
+              </li>
+              <li>
+                <h4>6. Main pour</h4>
+                <p>
+                  Slowly pour the remaining water in circular motions. Start
+                  from the center, spiral outward, avoid pouring directly on the
+                  filter. Keep a steady, controlled flow.
+                </p>
+              </li>
+              <li>
+                <h4>7.Drawdown and serve</h4>
+                <p>
+                  Total brew time: 2:30 - 3:30 minutes. Remove dripper and
+                  enjoy.
+                </p>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="fourth-section-container">
+        <div class="fourth-coffee-selection-text">
+          <h2>Most wanted coffee</h2>
+          <p>From our customers' favorites.</p>
+        </div>
+        <div class="fourth-coffee-selection-text-images-container">
+          <img
+            class="fourth-coffee-selection-text-images"
+            src="./images/index/fourthSection/espresso.png"
+            alt="espresso"
+          />
+          <img
+            class="fourth-coffee-selection-text-images"
+            src="./images/index/fourthSection/americano.png"
+            alt="americano"
+          />
+          <img
+            class="fourth-coffee-selection-text-images"
+            src="./images/index/fourthSection/latte.png"
+            alt="latte"
+          />
+          <img
+            class="fourth-coffee-selection-text-images"
+            src="./images/index/fourthSection/mocha.png"
+            alt="mocha"
+          />
+        </div>
+      </section>
+
+      <section class="fifth-section-container">
+        <h2>Here's what our customers say</h2>
+        <button type="button" class="prev">‹</button>
+        <div class="carousel-viewport">
+          <ul class="customer-testimony-container">
+            <li class="customer-testimony">
+              <img
+                src="./images/index/fifthSection/image-daniel.jpg"
+                alt="customer-profile"
+                loading="lazy"
+              />
+              <h3>Daniel</h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+              <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+                dolores cupiditate, perferendis vitae amet nobis impedit velit
+                sequi quidem nihil quibusdam, laudantium deleniti, repellat
+                fugiat recusandae natus sint ab architecto?
+              </blockquote>
+            </li>
+            <li class="customer-testimony">
+              <img
+                src="./images/index/fifthSection/image-jeanette.jpg"
+                alt="customer-profile"
+                loading="lazy"
+              />
+              <h3>Jeanette</h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              </div>
+              <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+                dolores cupiditate, perferendis vitae amet nobis impedit velit
+                sequi quidem nihil quibusdam, laudantium deleniti, repellat
+                fugiat recusandae natus sint ab architecto?
+              </blockquote>
+            </li>
+            <li class="customer-testimony">
+              <img
+                src="./images/index/fifthSection/image-jonathan.jpg"
+                alt="customer-profile"
+                loading="lazy"
+              />
+              <h3>Jonathan</h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              </div>
+              <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+                dolores cupiditate, perferendis vitae amet nobis impedit velit
+                sequi quidem nihil quibusdam, laudantium deleniti, repellat
+                fugiat recusandae natus sint ab architecto?
+              </blockquote>
+            </li>
+            <li class="customer-testimony">
+              <img
+                src="./images/index/fifthSection/image-kira.jpg"
+                alt="customer-profile"
+                loading="lazy"
+              />
+              <h3>Kira</h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              </div>
+              <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+                dolores cupiditate, perferendis vitae amet nobis impedit velit
+                sequi quidem nihil quibusdam, laudantium deleniti, repellat
+                fugiat recusandae natus sint ab architecto?
+              </blockquote>
+            </li>
+            <li class="customer-testimony">
+              <img
+                src="./images/index/fifthSection/image-patrick.jpg"
+                alt="customer-profile"
+                loading="lazy"
+              />
+              <h3>Patrick</h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              </div>
+              <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+                dolores cupiditate, perferendis vitae amet nobis impedit velit
+                sequi quidem nihil quibusdam, laudantium deleniti, repellat
+                fugiat recusandae natus sint ab architecto?
+              </blockquote>
+            </li>
+            <li class="customer-testimony">
+              <img
+                src="./images/index/fifthSection/image-jeanette.jpg"
+                alt="customer-profile"
+                loading="lazy"
+              />
+              <h3>Jessie</h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              </div>
+              <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi
+                dolores cupiditate, perferendis vitae amet nobis impedit velit
+                sequi quidem nihil quibusdam, laudantium deleniti, repellat
+                fugiat recusandae natus sint ab architecto?
+              </blockquote>
+            </li>
+          </ul>
+          <div class="slider-dots"></div>
+        </div>
+        <button type="button" class="next">›</button>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-first-container">
+        <div class="footer-logo-container">
+          <div class="footer-logo-container-sub">
+            <img
+              class="footer-logo"
+              src="./images/index/logo/coffee-cup.png"
+              alt="webpage-logo"
+              loading="lazy"
+            />
+            <h3>Sip into the the hot world of Coffee</h3>
+          </div>
+          <p class="footer-logo-text">
+            Delivering the best coffee experience. Coffee Lovers' Paradise
+          </p>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Page</h3>
+          <ul class="footer-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="coffeeBeans.html">Coffee Beans</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Follow Us</h3>
+          <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+            <li><a href="https://www.twitter.com">Twitter</a></li>
+            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Contact</h3>
+          <ul>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/address-svgrepo-com.svg"
+                alt="address-logo"
+                loading="lazy"
+              />
+              <p>07H Street-2 Borrow-Bridge GL6, USA</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/contact-phone-talking-svgrepo-com.svg"
+                alt="phone-logo"
+                loading="lazy"
+              />
+              <p>+81 999 8912</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/email-add-svgrepo-com.svg"
+                alt="email-logo"
+                loading="lazy"
+              />
+              <p>YourCoffeeAtWork@gmail.com</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/website-click-svgrepo-com.svg"
+                alt="website-logo"
+                loading="lazy"
+              />
+              <p>UrKofi.com</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-second-container">
+        <p class="footer-reserved">
+          Dec, 2025 Coffee Lovers' Paradise. All rights reserved.
+        </p>
+        <p class="payment-methods">Secured payment:</p>
+        <div class="footer-second-container-images">
+          <img
+            class="payment-cards"
+            src="./images/index/footer/mastercard-svgrepo-com.svg"
+            alt="master-card-logo"
+            loading="lazy"
+          />
+          <img
+            class="payment-cards"
+            src="./images/index/footer/visa-4-logo-svgrepo-com.svg"
+            alt="visa-card-logo"
+            loading="lazy"
+          />
+          <img
+            class="payment-cards"
+            src="./images/index/footer/paypal-svgrepo-com.svg"
+            alt="paypal-logo"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <!--<nav id="mobile-nav">
+      <div class="mobile-icons">
+        <img
+          id="mobile-home-button"
+          src="./images/mobileLogo/home/home.svg"
+          alt="mobile home button"
+        />
+        <p>Home</p>
+      </div>
+      <div class="mobile-icons">
+        <img
+          id="mobile-beans-button"
+          src="images/mobileLogo/order/cart-check-svgrepo-com.svg"
+          alt="beans store"
+        />
+        <p>Store</p>
+      </div>
+      <div class="mobile-icons">
+        <img
+          id="mobile-reserve-button"
+          src="images/mobileLogo/seat/seat-kitchen-svgrepo-com.svg"
+          alt="reservation"
+        />
+        <p>Reservation</p>
+      </div>
+      <div class="mobile-icons">
+        <img
+          id="mobile-user-button"
+          src="images/mobileLogo/user/user-icon-svgrepo-com.svg"
+          alt="user"
+        />
+        <p>User</p>
+      </div>
+      <div>
+        <div id="burger" class="mobile-icons">
+          <img src="images/mobileLogo/burger/icon-hamburger.svg" alt="" />
+        </div>
+        <div id="burger-close">
+          <img src="images/mobileLogo/burger/icon-close.svg" alt="" />
+        </div>
+      </div>
+    </nav>-->
+    <script src="js/hashPassword.js"></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/signup.js" defer></script>
+    <script src="js/home.js" defer></script>
+    <script src="js/mobileNav.js" defer></script>
+  </body>
+</html>

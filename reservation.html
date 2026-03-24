@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>Reservation</title>
+  </head>
+  <body class="service-body-container">
+    <div class="header-nav-container">
+      <header>
+        <img src="images/index/logo/coffee-cup.png" alt="webpage-logo" />
+        <h1>UrKofi</h1>
+      </header>
+      <nav class="webpage-navigation">
+        <ul>
+          <li><a href="index.html" class="nav-links">Home</a></li>
+          <li><a href="coffeeBeans.html" class="nav-links">Coffee Beans</a></li>
+          <li><a href="service.html" class="nav-links">Services</a></li>
+          <li><a href="aboutus.html" class="nav-links">About Us</a></li>
+          <li>
+            <p>
+              <a class="to-login-html-button">Login</a> or
+              <a href="signup.html" class="to-register-html-button">Sign up</a>
+            </p>
+          </li>
+        </ul>
+        <div class="user-container">
+          <div>
+            <span>Hi</span>
+            <p class="logged-in-user">Guest</p>
+          </div>
+          <button type="button" class="logout-button">Sign out</button>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div class="single-seat-window">
+        <h3>window side</h3>
+      </div>
+      <ul class="single-window-table">
+        <li class="seat-selection">
+          <label for="A1-seat">
+            <input name="seat" value="A1" id="A1-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A1-seat"
+              data-seat-type="single"
+            />
+            <span for="A1-seat">A1</span>
+          </label>
+        </li>
+        <li class="seat-selection">
+          <label for="A2-seat">
+            <input name="seat" value="A2" id="A2-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A2-seat"
+              data-seat-type="single"
+            />
+            <span for="A2-seat">A2</span>
+          </label>
+        </li>
+        <li class="seat-selection">
+          <label for="A3-seat">
+            <input name="seat" value="A3" id="A3-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A3-seat"
+              data-seat-type="single"
+            />
+            <span for="A3-seat">A3</span>
+          </label>
+        </li>
+        <li class="seat-selection">
+          <label for="A4-seat">
+            <input name="seat" value="A4" id="A4-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A4-seat"
+              data-seat-type="single"
+            />
+            <span for="A4-seat">A4</span>
+          </label>
+        </li>
+        <li class="seat-selection">
+          <label for="A5-seat">
+            <input name="seat" value="A5" id="A5-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A5-seat"
+              data-seat-type="single"
+            />
+            <span for="A5-seat">A5</span>
+          </label>
+        </li>
+        <li class="seat-selection">
+          <label for="A6-seat">
+            <input name="seat" value="A6" id="A6-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A6-seat"
+              data-seat-type="single"
+            />
+            <span for="A6-seat">A6</span>
+          </label>
+        </li>
+        <li class="seat-selection">
+          <label for="A7-seat">
+            <input name="seat" value="A7" id="A7-seat" type="radio" />
+            <img
+              class="single-seat"
+              src="./images/services/reservation/singleseat1.png"
+              alt="single table"
+              for="A7-seat"
+              data-seat-type="single"
+            />
+            <span for="A7-seat">A7</span>
+          </label>
+        </li>
+      </ul>
+      <div class="multi-seat-container">
+        <div class="double-seat-window">
+          <h3>window side</h3>
+        </div>
+
+        <ul class="double-seat-window-table">
+          <li class="seat-selection">
+            <label for="A11-seat">
+              <input name="seat" value="A11" id="A11-seat" type="radio" />
+              <img
+                src="./images/services/reservation/doubleseat1.png"
+                alt="double table"
+                for="A11-seat"
+                data-seat-type="double"
+              />
+              <span for="A11-seat">A11</span>
+            </label>
+          </li>
+          <li>
+            <label for="A12-seat">
+              <input name="seat" value="A12" id="A12-seat" type="radio" />
+              <img
+                src="./images/services/reservation/doubleseat1.png"
+                alt="double table"
+                for="A12-seat"
+                data-seat-type="double"
+              />
+              <span for="A12-seat">A12</span>
+            </label>
+          </li>
+          <li>
+            <label for="A13-seat">
+              <input name="seat" value="A13" id="A13-seat" type="radio" />
+              <img
+                src="./images/services/reservation/doubleseat1.png"
+                alt="double table"
+                for="A13-seat"
+                data-seat-type="double"
+              />
+              <span for="A13-seat">A13</span>
+            </label>
+          </li>
+          <li>
+            <label for="A14-seat">
+              <input name="seat" value="A14" id="A14-seat" type="radio" />
+              <img
+                src="./images/services/reservation/doubleseat1.png"
+                alt="double table"
+                for="A14-seat"
+                data-seat-type="double"
+              />
+              <span for="A14-seat">A14</span>
+            </label>
+          </li>
+          <li>
+            <label for="A15-seat">
+              <input name="seat" value="A15" id="A15-seat" type="radio" />
+              <img
+                src="./images/services/reservation/doubleseat1.png"
+                alt="double table"
+                for="A15-seat"
+                data-seat-type="double"
+              />
+              <span for="A15-seat">A15</span>
+            </label>
+          </li>
+        </ul>
+        <div class="share-seat-table">
+          <h3 class="share-table">Share table</h3>
+          <ul class="group-center-table">
+            <li class="six-seats">
+              <label for="B1-seat">
+                <input name="seat" value="B1" id="B1-seat" type="radio" />
+                <img
+                  src="./images/services/reservation/sixseat1.png"
+                  alt="double table"
+                  for="B1-seat"
+                  data-seat-type="six"
+                />
+                <span for="B1-seat">B1</span>
+              </label>
+            </li>
+            <li class="six-seats">
+              <label for="B2-seat">
+                <input name="seat" value="B2" id="B2-seat" type="radio" />
+                <img
+                  src="./images/services/reservation/sixseat1.png"
+                  alt="double table"
+                  for="B2-seat"
+                  data-seat-type="six"
+                />
+                <span for="B2-seat">B2</span>
+              </label>
+            </li>
+            <li class="four-seats">
+              <label for="B3-seat">
+                <input name="seat" value="B3" id="B3-seat" type="radio" />
+                <img
+                  src="./images/services/reservation/fourseat1.png"
+                  alt="double table"
+                  for="B3-seat"
+                  data-seat-type="four"
+                />
+                <span for="B3-seat">B3</span>
+              </label>
+            </li>
+            <li class="four-seats">
+              <label for="B4-seat">
+                <input name="seat" value="B4" id="B4-seat" type="radio" />
+                <img
+                  src="./images/services/reservation/fourseat1.png"
+                  alt="double table"
+                  for="B4-seat"
+                  data-seat-type="four"
+                />
+                <span for="B4-seat">B4</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-panel-container">
+        <h3 class="user-name-logged">Guest user</h3>
+        <form id="reserveForm">
+          <label for="selectNumber">Enter number of person</label>
+          <select name="selectNumber" id="selectNumber">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <label for="inputReserveDate">Reserve Date</label>
+          <input
+            type="date"
+            id="inputReserveDate"
+            placeholder="enter date"
+            required
+          />
+          <label for="inputReserveTime">Reserve Date</label>
+          <input
+            type="time"
+            id="inputReserveTime"
+            placeholder="enter time"
+            min="15:00"
+            max="19:00"
+            step="3600"
+            required
+          />
+          <label for="inputContact">Contact Number</label>
+          <input
+            type="text"
+            id="inputContact"
+            placeholder="Input contact number"
+            required
+          />
+          <label for="inputEmail">Email Address (Optional)</label>
+          <input
+            type="text"
+            id="inputEmail"
+            placeholder="Input email address"
+          />
+          <br />
+          <div class="reserve-button-container">
+            <input type="submit" value="submit" class="submit-reserve-button" />
+            <input type="button" value="Close" class="close-reserve-button" />
+          </div>
+        </form>
+      </div>
+      <div class="entrance-exit">
+        <button type="button" id="reserve-button">Reserve now</button>
+        <h3>Entrance/Exit</h3>
+      </div>
+      <section class="notice-section">
+        <h3>Notice</h3>
+        <p>
+          Reservation is only for Saturdays. We do not accept reservation on
+          other days.
+        </p>
+        <p>
+          Share table: Can be used freely by customers if no reservation for
+          that table during that day
+        </p>
+        <p>
+          You may also reserve for the double seat table if single seats are
+          fully occupied. You can not reserve for these seats if a single seat
+          table is available.
+        </p>
+        <p>
+          You may also reserve for the share table if single or double seats are
+          fully occupied. We will reserve a seat on the share table you
+          selected.
+        </p>
+        <p>If you have any questions, please contact us.</p>
+        <p>
+          +81 999 8912 or email us at
+          <a href="mailto:hello@urkofi.com">UrKofi@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-first-container">
+        <div class="footer-logo-container">
+          <div class="footer-logo-container-sub">
+            <img
+              class="footer-logo"
+              src="./images/index/logo/coffee-cup.png"
+              alt="webpage-logo"
+            />
+            <h3>Sip into the the hot world of Coffee</h3>
+          </div>
+          <p class="footer-logo-text">
+            Delivering the best coffee experience. Coffee Lovers' Paradise
+          </p>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Page</h3>
+          <ul class="footer-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="coffeeBeans.html">Coffee Beans</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Follow Us</h3>
+          <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+            <li><a href="https://www.twitter.com">Twitter</a></li>
+            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Contact</h3>
+          <ul>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/address-svgrepo-com.svg"
+                alt="address-logo"
+              />
+              <p>07H Street-2 Borrow-Bridge GL6, USA</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/contact-phone-talking-svgrepo-com.svg"
+                alt="phone-logo"
+              />
+              <p>+81 999 8912</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/email-add-svgrepo-com.svg"
+                alt="email-logo"
+              />
+              <p>YourCoffeeAtWork@gmail.com</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/website-click-svgrepo-com.svg"
+                alt="website-logo"
+              />
+              <p>UrKofi.com</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-second-container">
+        <p class="footer-reserved">
+          Dec, 2025 Coffee Lovers' Paradise. All rights reserved.
+        </p>
+        <p class="payment-methods">Secured payment:</p>
+        <div class="footer-second-container-images">
+          <img
+            class="payment-cards"
+            src="./images/index/footer/mastercard-svgrepo-com.svg"
+            alt="master-card-logo"
+          />
+          <img
+            class="payment-cards"
+            src="./images/index/footer/visa-4-logo-svgrepo-com.svg"
+            alt="visa-card-logo"
+          />
+          <img
+            class="payment-cards"
+            src="./images/index/footer/paypal-svgrepo-com.svg"
+            alt="paypal-logo"
+          />
+        </div>
+      </div>
+    </footer>
+    <script src="js/hashPassword.js"></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/signup.js" defer></script>
+    <script src="js/reserve.js" defer></script>
+    <script src="js/mobileNav.js" defer></script>
+  </body>
+</html>

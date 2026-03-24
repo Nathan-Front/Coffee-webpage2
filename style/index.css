@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: darkgoldenrod;
+}
+ul{
+    list-style:none;
+}
+p{
+    margin: 0;
+    font-size: clamp(0.9em, 1.2vw, 2em);
+}
+h1{
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+    color: whitesmoke;
+}
+h2,h3{
+    margin: 0;
+}
+h2{
+    font-size: clamp(1.5rem, 2.5vw, 3rem);
+}
+a{
+    text-decoration: none;
+}
+.header-nav-container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: black;
+}
+header{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    background: transparent;
+}
+header img{
+    height: clamp(2.5rem, 5vw, 3.5rem);
+    margin: 0 0 0 2em;
+}
+.web-name{
+    margin: 0 1rem 0 0;
+}
+.webpage-navigation{
+    margin: 0 0 0 auto;
+    padding: 0;
+    background-color: whitesmoke;
+    border-radius: 2em 0 0 2em;
+    display: flex;
+}
+.webpage-navigation > ul{
+    display: flex;
+    gap: 15px;
+   
+}
+.webpage-navigation > ul > li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.nav-links{
+    font-size: clamp(0.8rem, 1.5vw, 2rem);
+    color: black;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.nav-links:hover{
+    color: darkgoldenrod;
+    transition: 0.3s;
+}
+.to-login-html-button,
+.to-register-html-button{
+    color: #0000EE;
+}
+.to-login-html-button:hover,
+.to-register-html-button:hover{
+    color: #000080 !important;
+}
+.webpage-navigation > ul > li:nth-child(5){
+    margin: auto 1em;
+    padding: 0;
+}
+.webpage-navigation > ul > li:nth-child(5) > p{
+    font-size: 14px;
+}
+.webpage-navigation > ul > li:nth-child(5) > p> a{
+    color: blue;
+}
+.webpage-navigation > ul > li:nth-child(5) > p> a:hover{
+    cursor: pointer;
+}
+.user-container{
+    display: flex;
+    width: clamp(60px, 10vw, 90px);
+    margin: auto 0;
+    display: flex;
+    flex-direction: column; 
+}
+.user-container >div{
+    display: flex;
+    gap: 5px;
+    width: 90%;
+    overflow: hidden;
+}
+.user-container >div> span,
+.user-container >div> p{
+    font-size: clamp(0.6rem, 0.8rem, 1.5em); 
+}
+.logout-button{
+    width: 90%;
+    font-size: clamp(0.6rem, 0.8vw, 1.2rem);
+    border: none;
+    background-color: goldenrod;
+    padding: 4px 8px;
+    border-radius: 0.25em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.logout-button:hover{
+    cursor: pointer;
+    color: white;
+}
+#mobile-nav{
+    display: none;
+}
+@media only screen and (max-width:599px){
+    header img{
+        margin: 0 0 0 1em;
+    }
+    .webpage-navigation > ul{
+        display: none;
+        gap: unset;
+    }
+    .user-container{
+        display: none;
+    }
+    #mobile-nav{
+        width: 100%;
+        height: 2em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 20px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: goldenrod;
+        z-index: 9999;
+        border-top: 1px black solid;
+    }
+    #burger-close{
+        display: none;
+    }
+    #mobile-nav> div> img{
+        width: 30px;
+    }
+    .mobile-icons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .mobile-icons> button{
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mobile-icons> button> img{
+        width: inherit;
+        height: inherit;
+        margin: auto;
+    }
+    .mobile-icons> p{
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+    } 
+}
+@media (min-width: 600px) and (max-width: 768px){
+    header{
+        gap: 5px; 
+    }
+    header img{
+        margin: 0 0 0 1em;
+    }
+    .webpage-navigation > ul{
+        gap: 3px; 
+    }
+}

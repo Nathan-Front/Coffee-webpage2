@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>Coffee Beans</title>
+  </head>
+  <body class="coffee-beans-page">
+    <div class="header-nav-container">
+      <header>
+        <img
+          src="images/index/logo/coffee-cup.png"
+          alt="webpage-logo"
+          loading="lazy"
+        />
+        <h1>UrKofi</h1>
+      </header>
+      <nav class="webpage-navigation">
+        <ul>
+          <li><a href="index.html" class="nav-links">Home</a></li>
+          <li><a href="#" class="nav-links">Coffee Beans</a></li>
+          <li><a href="service.html" class="nav-links">Services</a></li>
+          <li><a href="aboutus.html" class="nav-links">About Us</a></li>
+          <li>
+            <p>
+              <a class="to-login-html-button">Login</a> or
+              <a href="signup.html">Sign up</a>
+            </p>
+          </li>
+        </ul>
+        <div class="user-container">
+          <div>
+            <span>Hi</span>
+            <p class="logged-in-user">Guest</p>
+          </div>
+          <button type="button" class="logout-button">Sign out</button>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <section class="coffee-beans-first-section">
+        <div class="coffee-beans-first-section-text">
+          <h2>20% off for our beloved customers</h2>
+          <p>
+            If you buy directly in our store, you'll get a 20% discount! So
+            hurry up come and buy now.
+          </p>
+        </div>
+      </section>
+
+      <article class="coffee-of-the-week">
+        <div class="article-left-panel-container">
+          <div class="article-left-panel-container-image-container">
+            <img
+              id="image-changer"
+              src="./images/coffeeBeans/secondSection/cappuccino1.jpg"
+              alt="coffee of the week"
+              loading="lazy"
+            />
+          </div>
+          <div class="article-left-panel-button-container">
+            <ul class="article-left-panel-button-list">
+              <li>
+                <button
+                  type="button"
+                  data-img="./images/coffeeBeans/secondSection/cappuccino1.jpg"
+                  class="article-left-panel-button"
+                >
+                  <img
+                    class="cappuccino-button-carousel activeButton"
+                    src="./images/coffeeBeans/secondSection/cappuccino1.jpg"
+                    alt="cappuccino 1"
+                    loading="lazy"
+                  />
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  data-img="./images/coffeeBeans/secondSection/cappuccino2.jpg"
+                  class="article-left-panel-button"
+                >
+                  <img
+                    class="cappuccino-button-carousel"
+                    src="./images/coffeeBeans/secondSection/cappuccino2.jpg"
+                    alt="cappuccino 2"
+                    loading="lazy"
+                  />
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  data-img="./images/coffeeBeans/secondSection/cappuccino3.JPG"
+                  class="article-left-panel-button"
+                >
+                  <img
+                    class="cappuccino-button-carousel"
+                    src="./images/coffeeBeans/secondSection/cappuccino3.JPG"
+                    alt="cappuccino 3"
+                    loading="lazy"
+                  />
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  data-img="./images/coffeeBeans/secondSection/cappuccino4.jpg"
+                  class="article-left-panel-button"
+                >
+                  <img
+                    class="cappuccino-button-carousel"
+                    src="./images/coffeeBeans/secondSection/cappuccino4.jpg"
+                    alt="cappuccino 4"
+                    loading="lazy"
+                  />
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="article-right-panel-container">
+          <div class="article-right-panel-container-text">
+            <h3>Coffee of the month</h3>
+            <div class="coffee-bean-stars">
+              <p id="coffee-month-item">Cappuccino</p>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+
+            <p>
+              Most bought and liked coffee from our beloved customers last
+              month.
+            </p>
+            <p id="coffee-month-price">$4.50</p>
+          </div>
+          <div class="article-right-panel-button-list">
+            <button type="button" id="coffee-month-add-to-cart-btn">
+              <img
+                src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                alt="add to cart"
+                loading="lazy"
+              />Add to Cart
+            </button>
+          </div>
+        </div>
+      </article>
+      <article class="product-sale-list-container" id="sale-products">
+        <h3>Our Best Beans</h3>
+        <p>Try our best coffee beans that suits your taste.</p>
+        <div class="beans-carousel-viewport">
+          <ul class="product-sale-list-item-container">
+            <li class="product-sale-item-container">
+              <h4>Espresso</h4>
+              <img
+                class="product-sale-item"
+                src="./images/index/fourthSection/espresso.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Another Great Complex Espresso Bean</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span class="item-price">$6.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Ristretto</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/ristretto.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Taste Profile – Sweeter, Richer, Less Bitter</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span class="item-price">$5.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Lungo</h4>
+              <img
+                class="product-sale-item"
+                src="./images//coffeeBeans/thirdSection/lungo.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Feels like an Italian? Make an Italian-style coffee</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span>$6.00</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Doppio</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/doppio.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Double the amount, double the beans. The double Espresso</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span>$6.00</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Red Eye</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/redeye.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Another Great Complex Espresso Bean</p>
+                <h5>Shipping Fee: $0.50</h5>
+                <div>
+                  <span>$5.00</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Americano</h4>
+              <img
+                class="product-sale-item"
+                src="./images/index/fourthSection/americano.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Taste Profile – Sweeter, Richer, Less Bitter</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span>$5.00</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Latte</h4>
+              <img
+                class="product-sale-item"
+                src="./images/index/fourthSection/latte.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Feels like an Italian? Make an Italian-style coffee</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span>$5.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Cappuccino</h4>
+              <img
+                id="cappuccino-image"
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/cappuccino.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p id="cappuccino-descript">
+                  Double the amount, double the beans. The double Espresso
+                </p>
+                <h5 id="cappuccino-shipping">Free Shipping</h5>
+                <div>
+                  <span id="cappuccino-price">$4.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Flat White</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/flatwhite.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Another Great Complex Espresso Bean</p>
+                <h5>Shipping Fee: $0.50</h5>
+                <div>
+                  <span>$6.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Cafe Au Lait</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/cafeaulait.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Taste Profile – Sweeter, Richer, Less Bitter</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span>$5.00</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Cortado</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/cortado.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Feels like an Italian? Make an Italian-style coffee</p>
+                <h5>Shipping Fee: $0.50</h5>
+                <div>
+                  <span>$7.00</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Macchiato</h4>
+              <img
+                class="product-sale-item"
+                src="./images/coffeeBeans/thirdSection/macchiato.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Double the amount, double the beans. The double Espresso</p>
+                <h5>Shipping Fee: $0.50</h5>
+                <div>
+                  <span>$6.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="product-sale-item-container">
+              <h4>Mocha</h4>
+              <img
+                class="product-sale-item"
+                src="./images/index/fourthSection/mocha.png"
+                alt="espresso image"
+                loading="lazy"
+              />
+              <div class="product-sale-item-description">
+                <p>Double the amount, double the beans. The double Espresso</p>
+                <h5>Free Shipping</h5>
+                <div>
+                  <span>$5.50</span>
+                  <button type="button" class="add-to-cart-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="coffee-dots"></div>
+        </div>
+        <button type="button" class="coffeePrev">‹</button>
+        <button type="button" class="coffeeNext">›</button>
+      </article>
+
+      <article class="other-sale-list-container">
+        <h3>We Also Sell</h3>
+        <div class="other-items-container">
+          <ul class="other-items-list-container">
+            <li class="other-items">
+              <h4>Mug</h4>
+              <img
+                class="other-sale-item"
+                src="./images/coffeeBeans/fourthSection/mug.png"
+                alt="coffee mug"
+                loading="lazy"
+              />
+              <div class="other-sale-item-description">
+                <p>White ceramic mug. 200ml capacity. weight 250 grams.</p>
+                <h5>Shipping Fee: $0.75</h5>
+                <div>
+                  <span>$3.50</span>
+                  <button type="button" class="add-to-cart-other-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="other-items">
+              <h4>Paper Cup</h4>
+              <img
+                class="other-sale-item"
+                src="./images/coffeeBeans/fourthSection/papercup.png"
+                alt="coffee mug"
+                loading="lazy"
+              />
+              <div class="other-sale-item-description">
+                <p>An environment coffee cup. 350ml capacity.</p>
+                <h5>Shipping Fee: $0.25</h5>
+                <div>
+                  <span>$1.50</span>
+                  <button type="button" class="add-to-cart-other-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="other-items">
+              <h4>V60 Coffee Filter</h4>
+              <img
+                class="other-sale-item"
+                src="./images/coffeeBeans/fourthSection/filter.png"
+                alt="coffee mug"
+                loading="lazy"
+              />
+              <div class="other-sale-item-description">
+                <p>50 sheets od disposable coffee filter. Color brown</p>
+                <h5>Shipping Fee: $0.50</h5>
+                <div>
+                  <span>$1.25</span>
+                  <button type="button" class="add-to-cart-other-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li class="other-items">
+              <h4>Transparent Dripper</h4>
+              <img
+                class="other-sale-item"
+                src="./images/coffeeBeans/fourthSection/dripper.png"
+                alt="coffee mug"
+                loading="lazy"
+              />
+              <div class="other-sale-item-description">
+                <p>Plastic transparent dripper. Clean</p>
+                <h5>Shipping Fee: $0.50</h5>
+                <div>
+                  <span>$2.00</span>
+                  <button type="button" class="add-to-cart-other-button">
+                    <img
+                      src="./images/coffeeBeans/cart/icon-cart-white.svg"
+                      alt="add to cart"
+                      loading="lazy"
+                    />Add to Cart
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </article>
+      <section class="cart-float-container">
+        <a href="cart.html">
+          <img
+            src="./images/coffeeBeans/cart/icon-cart-white.svg"
+            alt="cart button"
+            loading="lazy"
+          />
+        </a>
+        <span id="cart-item-counter-display">0</span>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-first-container">
+        <div class="footer-logo-container">
+          <div class="footer-logo-container-sub">
+            <img
+              class="footer-logo"
+              src="./images/index/logo/coffee-cup.png"
+              alt="webpage-logo"
+              loading="lazy"
+            />
+            <h3>Sip into the the hot world of Coffee</h3>
+          </div>
+          <p class="footer-logo-text">
+            Delivering the best coffee experience. Coffee Lovers' Paradise
+          </p>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Page</h3>
+          <ul class="footer-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="coffeeBeans.html">Coffee Beans</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Follow Us</h3>
+          <ul>
+            <li><a href="https://www.facebook.com">Facebook</a></li>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+            <li><a href="https://www.twitter.com">Twitter</a></li>
+            <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer-page-links">
+          <h3 class="footer-links-title">Contact</h3>
+          <ul>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/address-svgrepo-com.svg"
+                alt="address-logo"
+                loading="lazy"
+              />
+              <p>07H Street-2 Borrow-Bridge GL6, USA</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/contact-phone-talking-svgrepo-com.svg"
+                alt="phone-logo"
+                loading="lazy"
+              />
+              <p>+81 999 8912</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/email-add-svgrepo-com.svg"
+                alt="email-logo"
+                loading="lazy"
+              />
+              <p>YourCoffeeAtWork@gmail.com</p>
+            </li>
+            <li class="footer-contact-items">
+              <img
+                class="footer-contact-images"
+                src="./images/index/footer/website-click-svgrepo-com.svg"
+                alt="website-logo"
+                loading="lazy"
+              />
+              <p>UrKofi.com</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-second-container">
+        <p class="footer-reserved">
+          Dec, 2025 Coffee Lovers' Paradise. All rights reserved.
+        </p>
+        <p class="payment-methods">Secured payment:</p>
+        <div class="footer-second-container-images">
+          <img
+            class="payment-cards"
+            src="./images/index/footer/mastercard-svgrepo-com.svg"
+            alt="master-card-logo"
+            loading="lazy"
+          />
+          <img
+            class="payment-cards"
+            src="./images/index/footer/visa-4-logo-svgrepo-com.svg"
+            alt="visa-card-logo"
+            loading="lazy"
+          />
+          <img
+            class="payment-cards"
+            src="./images/index/footer/paypal-svgrepo-com.svg"
+            alt="paypal-logo"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/hashPassword.js"></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/signup.js" defer></script>
+    <script src="js/coffeeBeans.js"></script>
+    <script src="js/mobileNav.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>Sign Up</title>
+  </head>
+  <body class="service-body-container">
+    <div class="header-nav-container">
+      <header>
+        <img src="images/index/logo/coffee-cup.png" alt="webpage-logo" />
+        <h1>UrKofi</h1>
+      </header>
+      <nav class="webpage-navigation">
+        <ul>
+          <li><a href="index.html" class="nav-links">Home</a></li>
+          <li><a href="coffeeBeans.html" class="nav-links">Coffee Beans</a></li>
+          <li><a href="service.html" class="nav-links">Services</a></li>
+          <li><a href="aboutus.html" class="nav-links">About Us</a></li>
+          <li>
+            <p>
+              <a href="#" class="to-login-html-button">Login</a> or
+              <a href="signup.html">Sign up</a>
+            </p>
+          </li>
+        </ul>
+        <div class="user-container">
+          <div>
+            <span>Hi</span>
+            <p class="logged-in-user">Guest</p>
+          </div>
+          <button type="button" class="logout-button">Sign out</button>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <form id="loginForm" class="login-form" novalidate>
+        <h3>Sign In</h3>
+        <label for="loginName">User Name</label>
+        <input
+          type="text"
+          id="loginName"
+          placeholder="user name"
+          autocomplete="new-user-name"
+        />
+        <label for="loginPassword">Password</label>
+        <div class="login-password-container">
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="password"
+            autocomplete="new-password"
+          />
+          <i
+            class="fa-solid fa-eye toggle-password"
+            data-target="loginPassword"
+            role="button"
+            tabindex="0"
+            id="eye"
+          ></i>
+        </div>
+
+        <div class="login-button-container">
+          <button type="submit">Login</button>
+          <button type="button" id="mobile-signup-form">
+            Dont have account yet?
+          </button>
+        </div>
+        <label class="login-remember-me">
+          <input
+            id="remember-me"
+            type="checkbox"
+            checked="checked"
+            name="remember"
+          />
+          <span>Remember me</span>
+        </label>
+        <div class="cancel-forgot-container">
+          <button type="button" id="login-close-createAccnt-page">
+            Cancel
+          </button>
+          <p>Forgot <a href="#" id="forgot-password">password?</a></p>
+        </div>
+      </form>
+      <footer>
+        <div class="footer-first-container">
+          <div class="footer-logo-container">
+            <div class="footer-logo-container-sub">
+              <img
+                class="footer-logo"
+                src="./images/index/logo/coffee-cup.png"
+                alt="webpage-logo"
+              />
+              <h3>Sip into the the hot world of Coffee</h3>
+            </div>
+            <p class="footer-logo-text">
+              Delivering the best coffee experience. Coffee Lovers' Paradise
+            </p>
+          </div>
+          <div class="footer-page-links">
+            <h3 class="footer-links-title">Page</h3>
+            <ul class="footer-nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="coffeeBeans.html">Coffee Beans</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-page-links">
+            <h3 class="footer-links-title">Follow Us</h3>
+            <ul>
+              <li><a href="https://www.facebook.com">Facebook</a></li>
+              <li><a href="https://www.instagram.com">Instagram</a></li>
+              <li><a href="https://www.twitter.com">Twitter</a></li>
+              <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+            </ul>
+          </div>
+          <div class="footer-page-links">
+            <h3 class="footer-links-title">Contact</h3>
+            <ul>
+              <li class="footer-contact-items">
+                <img
+                  class="footer-contact-images"
+                  src="./images/index/footer/address-svgrepo-com.svg"
+                  alt="address-logo"
+                />
+                <p>07H Street-2 Borrow-Bridge GL6, USA</p>
+              </li>
+              <li class="footer-contact-items">
+                <img
+                  class="footer-contact-images"
+                  src="./images/index/footer/contact-phone-talking-svgrepo-com.svg"
+                  alt="phone-logo"
+                />
+                <p>+81 999 8912</p>
+              </li>
+              <li class="footer-contact-items">
+                <img
+                  class="footer-contact-images"
+                  src="./images/index/footer/email-add-svgrepo-com.svg"
+                  alt="email-logo"
+                />
+                <p>YourCoffeeAtWork@gmail.com</p>
+              </li>
+              <li class="footer-contact-items">
+                <img
+                  class="footer-contact-images"
+                  src="./images/index/footer/website-click-svgrepo-com.svg"
+                  alt="website-logo"
+                />
+                <p>UrKofi.com</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-second-container">
+          <p class="footer-reserved">
+            Dec, 2025 Coffee Lovers' Paradise. All rights reserved.
+          </p>
+          <p class="payment-methods">Secured payment:</p>
+          <div class="footer-second-container-images">
+            <img
+              class="payment-cards"
+              src="./images/index/footer/mastercard-svgrepo-com.svg"
+              alt="master-card-logo"
+            />
+            <img
+              class="payment-cards"
+              src="./images/index/footer/visa-4-logo-svgrepo-com.svg"
+              alt="visa-card-logo"
+            />
+            <img
+              class="payment-cards"
+              src="./images/index/footer/paypal-svgrepo-com.svg"
+              alt="paypal-logo"
+            />
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script src="js/hashPassword.js" defer></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/signup.js" defer></script>
+    <script src="js/mobileNav.js" defer></script>
+  </body>
+</html>
