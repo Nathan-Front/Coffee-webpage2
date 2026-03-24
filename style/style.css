@@ -1,69 +1,4 @@
 
-.first-section-container{
-    background-image: url('../images/index/firstSection/delicious-coffee-cup-indoors.jpg');
-    background-size: 100% clamp(200px, 600px, 800px);
-    background-position: center;
-    background-repeat: no-repeat;
-    height: clamp(200px, 500px, 600px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.first-section-container-text,
-.first-section-container-link{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-.first-section-container-text> h2,
-.first-section-container-text> p,
-.first-section-container-text> a{
-    margin: 0 0 0 100px;
-    color: #3B3030;
-}
-.first-section-container-text> h2{
-    width: clamp(40%, 2vw, 90%);
-    font-size: clamp(1.5rem, 4vw, 4rem);
-     text-shadow:
-    -1px -1px 0 goldenrod,
-     1px -1px 0 goldenrod,
-    -1px  1px 0 goldenrod,
-     1px  1px 0 goldenrod;
-}
-.first-section-container-text> p{
-    margin-top: 20px;
-    color: whitesmoke;
-    width: 40%;
-    font-size: clamp(1.3rem, 1.8vw, 2rem);
-    text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
-.first-section-container-link p{
-    color: black;
-    margin: 0 100px 0 auto;
-    font-weight: bolder;
-}
-.first-section-container-link a{
-    color: whitesmoke;
-    margin: 0 100px 0 auto;
-}
-.first-section-container-link a{
-    padding: 10px 15px;
-    background-color: goldenrod;
-    text-decoration: none;
-    font-weight: bolder;
-    border-radius: 1em;
-    box-shadow: 2px 3px 6px #85746b;
-}
-.first-section-container-link a:hover{
-    color: goldenrod;
-    background-color: black;
-    background-color: rgba(0,0,0, 0.8);
-    transition: 0.3s;
-}
 .second-section-container{
     width: 100%;
     display: flex;
@@ -470,35 +405,7 @@ footer{
     width: clamp(1rem, 3rem, 4rem);
 }
 @media only screen and (max-width: 540px){
-    .first-section-container{
-        height: clamp(200px, 250px, 300px); 
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    .first-section-container-text> h2,
-    .first-section-container-text> p,
-    .first-section-container-text> a{
-        margin: 0; 
-    }
-    .first-section-container-text> p{
-        display: none; 
-    }
-    .first-section-container-text> h2{
-        width: 70%; 
-        margin: 0 0 0 1em; 
-    }
-    .first-section-container-text> p{
-        margin-top: 0px; 
-        font-size: clamp(1.2rem, 1.2vw, 1.5rem); 
-    }
-    .first-section-container-link p{
-        display: none;   
-    }
-    .first-section-container-link a{
-        width: fit-content;
-        margin: 5em 0 0 1em;
-    }
+
     .second-section-container{
         min-width: 100vw; 
         justify-content: start; 
@@ -723,33 +630,6 @@ footer{
     }
 }
 @media (min-width: 541px) and (max-width: 768px){
-    .first-section-container{
-        background-size: 100% clamp(200px, 400px, 800px); 
-        height: clamp(200px, 400px, 600px); 
-    }
-    .first-section-container-text,
-    .first-section-container-link{
-        gap: 0; 
-    }
-    .first-section-container-text> h2,
-    .first-section-container-text> p,
-    .first-section-container-text> a{
-        margin: 0 0 0 30px; 
-    }
-    .first-section-container-text> h2{
-        width: clamp(60%, 2vw, 90%); 
-        margin-top: 30px; 
-    }
-    .first-section-container-text> p{
-        margin-top: 140px; 
-        width: 80%; 
-    }
-    .first-section-container-link p{
-        margin: 0 30px 0 auto; 
-    }
-    .first-section-container-link a{
-        margin: 0 30px 0 auto; 
-    }
 
     .second-section-container{
         height: auto; 
