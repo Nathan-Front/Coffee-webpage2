@@ -1,93 +1,4 @@
 
-.second-section-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: clamp(0em, 2vw, 2em);
-    padding-bottom: 50px;
-    height: 600px;
-}
-.second-section-container-text{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-  
-}
-.second-section-container-text > h2{
-    margin-top: 30px;
-}
-.second-section-container-text > p{
-    margin-top: 3.5em;
-}
-.second-section-container-text > h2,
-.second-section-container-text > p,
-.second-section-container-text > ul{
-    margin-left: 50px;
-}
-.coffee-selection{
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: auto auto;
-    flex-wrap: wrap;
-    width: clamp(100px, 25vw, 350px);
-}
-.coffee-selection > li{
-    padding: 3px 5px;
-}
-.coffee-selection > li > button{
-    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-    color: black;   
-    border: none;
-    background-color: transparent;
-}
-.coffee-selection > li >button:hover{
-    cursor: pointer;
-    color: whitesmoke;
-    transition: 0.3s;
-}
-.coffee-selection > li > button.currentSelected{
-    transform: scale(1.09);
-    color: whitesmoke;
-}
-.coffee-selection-text{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    width: 60%;
-    margin-top: 30px;
-}
-.coffee-selection-text.selectedCoffee{
-    display: flex;
-}
-.coffee-selection-text h3{
-    margin-top: 2.5em;
-}
-.coffee-selection-text p{
-    margin: 10px clamp(5px, 2vw, 40px) 0 clamp(5px, 2vw, 40px);
-    width: 70%;
-    height: 80px;
-    max-height: 110px;
-}
-.coffee-selection-text-images{
-    display: flex;
-    justify-content: center;
-    gap: 2em;
-    margin-top: auto;
-}
-.coffee-selection-text-images img{
-    width: clamp(100px, 25vw, 300px);
-    height: clamp(200px, 25vw, 400px);
-    border-radius: 1em;
-    box-shadow: 2px 3px 6px #85746b;
-    
-}
-.coffee-images{
-    transition: height 0.3s ease;
-}
 .third-section-container{
     display: flex;
     flex-direction: column;
@@ -404,86 +315,9 @@ footer{
 .payment-cards{
     width: clamp(1rem, 3rem, 4rem);
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
 
-    .second-section-container{
-        min-width: 100vw; 
-        justify-content: start; 
-        gap: unset;
-        padding-bottom: 0;
-        height: auto;
-        overflow: hidden; 
-    }
-    .second-section-container-text{
-        display: none; 
-    }
-    .coffee-selection-text{
-        display: flex; 
-        align-items: center;
-        text-align: unset;
-        min-width: 100%;
-        margin-top: 0;
-        transition: transform 0.4s ease;
-    }
-    .coffee-selection-text h3{
-        margin: 1em 0 0 0; 
-    }
-    .coffee-selection-text p{
-        margin: 1em 0 0 0; 
-        width: 95%; 
-        height: auto; 
-        max-height: unset; 
-    }
-    .coffee-selection-text-images{
-        gap: 1em; 
-        margin-top: 1em; 
-        padding: 0 1em 10px 1em;
-    }
-    .coffee-selection-text-images img{
-        width: clamp(100px, 25vw, 300px); /**/
-        height: clamp(100px, 25vw, 300px); /**/
-    }
-    .coffee-selection-text> div:nth-child(3){
-        flex-direction: column;
-    }
-    .coffee-selection-text> div:nth-child(3)> img{
-         width: clamp(250px, 25vw, 300px); 
-        height: clamp(160px, 25vw, 300px); 
-    }
-    .second-section-container> div:nth-child(4){
-        flex-direction: column; 
-    }
-    .second-section-container> div:nth-child(4)>div:nth-child(3)>img,
-    .second-section-container> div:nth-child(5)>div:nth-child(3)>img{
-         width: clamp(250px, 25vw, 300px); 
-        height: clamp(130px, 20vw, 300px); 
-    }
-    #mocha-images{
-        flex-direction: row;
-    }
-    #mocha-images>img{
-        width: clamp(170px, 20vw, 300px); 
-        height: clamp(170px, 20vw, 300px);  
-    }
-    .mobile-slider-dots{
-        width: 100%;
-        display: inline-block;
-        text-align: center;
-        margin: auto 0;
-        border-bottom: 1px black solid;
-    }
-    .mobile-dot{
-        display: inline-block;
-        width: 20px;
-        height: 10px;
-        border-radius: 0.25em;
-        margin: 0.2em;
-        background: rgb(0, 0, 0);
-        border: 1px black solid;
-    }
-    .mobile-dot.activeCoffee{
-        background: goldenrod;
-    }
+    
     .third-section-container> h2{
        padding-bottom: 25px;
     }
@@ -629,41 +463,9 @@ footer{
         height: 30px;
     }
 }
-@media (min-width: 541px) and (max-width: 768px){
+@media (min-width: 600px) and (max-width: 768px){
 
-    .second-section-container{
-        height: auto; 
-        padding: 30px 0; 
-    }
-    .second-section-container-text{
-        width: 40%; 
-    }
-    .second-section-container-text > h2{
-        margin-top: 0; 
-    }
-    .second-section-container-text > p{
-        margin-top: 0; 
-    }
-    .second-section-container-text > h2,
-    .second-section-container-text > p,
-    .second-section-container-text > ul{
-        margin-left: 20px; 
-    }
-    .coffee-selection{
-        width: 100%; 
-    }
-    .coffee-selection > li > button{
-        text-align: left; 
-    }
-    .coffee-selection-text{
-        margin-top: 0; 
-    }
-    .coffee-selection-text p{
-        width: 90%; 
-        height: auto; 
-        max-height: unset; 
-        padding-bottom: 20px; 
-    }
+
     .third-section-container{
         padding: 30px 0; 
     }

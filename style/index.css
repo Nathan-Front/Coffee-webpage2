@@ -20,16 +20,20 @@ p{
 }
 h1{
     font-size: clamp(1.5rem, 2.5vw, 3rem);
-    color: whitesmoke;
+    color: #ffffff;
 }
 h2,h3{
     margin: 0;
 }
 h2{
-    font-size: clamp(1.5rem, 2.5vw, 3rem);
+    font-size: clamp(1.3rem, 2.5vw, 3rem);
 }
 a{
     text-decoration: none;
+}
+a:hover,
+button:hover{
+    cursor: pointer;
 }
 .header-nav-container{
     width: 100%;
@@ -88,7 +92,7 @@ header img{
 }
 .to-login-html-button:hover,
 .to-register-html-button:hover{
-    color: #000080 !important;
+    color: #ffffff;
 }
 .webpage-navigation > ul > li:nth-child(5){
     margin: auto 1em;
@@ -123,7 +127,7 @@ header img{
 }
 .logout-button:hover{
     cursor: pointer;
-    color: white;
+    color: #ffffff;
 }
 #mobile-nav{
     display: none;
@@ -245,7 +249,7 @@ header img{
 }
 .first-section-container-text> p:nth-child(2){
     margin-top: 20px;
-    color: whitesmoke;
+    color: #ffffff;
     width: clamp(200px, 50vw, 500px);
     font-size: clamp(1.1rem, 1.8vw, 2rem);
     text-shadow:
@@ -255,7 +259,7 @@ header img{
      1px  1px 0 #000;
 }
 .first-section-container-text> p:nth-child(3){
-    color: whitesmoke;
+    color: #ffffff;
     font-weight: bolder;
     margin-top: 50px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
@@ -267,13 +271,13 @@ header img{
     text-decoration: none;
     font-weight: bolder;
     border-radius: 1em;
-    box-shadow: 2px 3px 6px #85746b;
+    box-shadow: 3px 3px 6px #3B3030;
 }
 .first-section-container-text> a:hover{
-    color: goldenrod;
-    background-color: black;
+    color: #c89b3c;
     background-color: rgba(0,0,0, 0.8);
     transition: 0.3s;
+    box-shadow: 3px 3px 6px #c89b3c;
 }
 @media only screen and (max-width: 599px){
     .first-section-container-text> p{
@@ -282,18 +286,215 @@ header img{
     .first-section-container-text> h2{
         width: 70%; 
     }
-    .first-section-container-text> p{
-        margin-top: 0px; 
-        font-size: clamp(1.2rem, 1.2vw, 1.5rem); 
-    }
     .first-section-container-text> a{
         margin-top: 40px;
     }
 }
-@media (min-width: 600px) and (max-width: 768px){
 
-    .first-section-container-text> h2{
-        width: clamp(60%, 2vw, 90%); 
-        margin-top: 30px; 
+
+
+
+.second-section-container{
+    width: 100%;
+    display: flex;
+    padding: 30px 0;
+    gap: 1em;
+    padding-bottom: 50px;
+    background-color: #E6D3A3;
+}
+.second-section-container-text{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 40%;
+}
+.second-section-container-text > h2,
+.second-section-container-text > p,
+.coffee-selection{
+    width: 100%;
+}
+.second-section-container-text > h2{
+    margin-top: 30px;
+}
+.second-section-container-text > p{
+    margin-top: 1.5em;
+}
+.second-section-container-text > h2,
+.second-section-container-text > p,
+.second-section-container-text > ul{
+    padding-left: clamp(20px, 5vw, 80px);
+    
+}
+.coffee-selection{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    flex-wrap: wrap; 
+}
+.coffee-selection > li{
+    padding: 3px 5px;
+}
+.coffee-selection > li > button{
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    color: black;   
+    border: none;
+    background-color: transparent;
+}
+.coffee-selection > li >button:hover{
+    cursor: pointer;
+    color: whitesmoke;
+    transition: 0.3s;
+}
+.coffee-selection > li > button.currentSelected{
+    transform: scale(1.09);
+    color: whitesmoke;
+}
+.coffee-selection-text{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    flex: 1;
+}   
+.coffee-selection-text.selectedCoffee{
+    display: flex;
+}
+.coffee-selection-text> h3{
+    margin-top: 2.5em;
+}
+.coffee-selection-text> p{
+    margin: 
+    10px 
+    clamp(5px, 2vw, 40px) 
+    20px 
+    clamp(5px, 2vw, 40px);
+    width: 80%;
+    
+}
+.coffee-selection-text-images{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: auto;
+}
+.coffee-images{
+    width: clamp(80px, 20vw, 300px);
+    height: clamp(80px, 20vw, 300px);
+    border-radius: 1em;
+    box-shadow: 2px 3px 6px #85746b;
+    transition: height 0.3s ease;
+}
+
+.coffee-selection-text.small-text .coffee-images{
+    height: clamp(200px, 20vw, 400px);
+}
+
+.coffee-selection-text.medium-text .coffee-images{
+    height: clamp(130px, 15vw, 320px);
+}
+
+.coffee-selection-text.large-text .coffee-images{
+    height: clamp(80px, 13vw, 200px);
+}
+@media only screen and (max-width: 599px){
+    .second-section-container{
+        min-width: 100%; 
+        justify-content: start; 
+        gap: unset;
+        padding-bottom: 0;
+        height: auto;
+        overflow: hidden; 
     }
+    .second-section-container-text{
+        display: none; 
+    }
+    .coffee-selection-text{
+        display: flex; 
+        align-items: center;
+        text-align: unset;
+        min-width: 100%;
+        margin-top: 0;
+        transition: transform 0.4s ease;
+    }
+    .coffee-selection-text h3{
+        margin: 1em 0 0 0; 
+    }
+    .coffee-selection-text p{
+        margin: 1em 0 0 0; 
+        width: 95%; 
+        height: auto; 
+        max-height: unset; 
+    }
+    .coffee-selection-text-images{
+        gap: 1em; 
+        margin-top: 1em; 
+        padding: 0 1em 10px 1em;
+    }
+    .coffee-images{
+        width: clamp(130px, 40vw, 300px); 
+        height: clamp(80px, 40vw, 300px); 
+    }
+    .second-section-container> div:nth-child(4){
+        flex-direction: column; 
+    }
+    .second-section-container> div:nth-child(4)>div:nth-child(3)>img,
+    .second-section-container> div:nth-child(5)>div:nth-child(3)>img{
+        width: clamp(130px, 40vw, 300px); 
+        height: clamp(150px, 32vw, 300px);
+    }
+
+    #mocha-images{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #mocha-images>img{
+        width: clamp(100px, 30vw, 300px); 
+        height: clamp(100px, 30vw, 300px);  
+    }
+    .mobile-slider-dots{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        margin: auto 0;
+        border-bottom: 1px black solid;
+    }
+    .mobile-dot{
+        display: inline-block;
+        width: 20px;
+        height: 10px;
+        border-radius: 0.25em;
+        margin: 0.2em;
+        background: rgb(0, 0, 0);
+        border: 1px black solid;
+    }
+    .mobile-dot.activeCoffee{
+        background: goldenrod;
+    }
+}
+@media (min-width: 600px) and (max-width: 768px){
+    .second-section-container-text{
+       gap: 10px;
+    }
+    .second-section-container-text > h2{
+        margin-top: 0;
+        width: 90%; 
+    }
+    .second-section-container-text > p{
+        margin-top: 0; 
+        width: 90%;
+    }
+    .coffee-selection{
+        padding: 10px 0;
+    }
+    .coffee-selection-text h3{
+        margin-top: 0;
+    }
+    .coffee-selection-text> p{
+        width: 90%;
+    }
+    
 }
