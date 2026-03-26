@@ -1,16 +1,5 @@
 
-async function mobileNavFetch(){
-  if(window.innerWidth > 599) return; 
-  const mobileNav = await fetch("./mobileNavigation.html");
-  const navHtml =await mobileNav.text();
-  document.body.insertAdjacentHTML("beforeend", navHtml);
 
-  toUser();
-  burgerContent();
-  mobileNavigationBtn();
-  toSignupForm();
-}
-document.addEventListener("DOMContentLoaded", mobileNavFetch);
 
 let mobileNavBound = false;
 function mobileNavigationBtn(){
@@ -32,11 +21,23 @@ function mobileNavigationBtn(){
     if(reserveBtn){
       window.location.href = "reservation.html";
     }
+
+    const userBtn = e.target.closest("#mobile-user-button");
+    if(userBtn){
+      toUser();
+    }
+
+
+    const burgerBtn = e.target.closest("#burger");
+    if(burgerBtn){
+      burgerContent();
+    }
+
   });
 }
 
 let userBtn;
-function toUser(){
+async function toUser(){
   if(window.innerWidth > 599) return;
   userBtn = document.getElementById("mobile-user-button");
   if(!userBtn) return;
@@ -45,7 +46,7 @@ function toUser(){
   closeBtn.className = "close-input-field";
   closeBtn.textContent = "X";
   
-  userBtn.addEventListener("click", async () =>{
+ // userBtn.addEventListener("click", async () =>{
     //if(formOpen) return; //Prevent multiple clicks
     if(document.querySelector(".input-field-container")) return; //If currently opened, do nothing
     userBtn.disabled = true; //Disable button to prevent multiple clicks
@@ -136,7 +137,7 @@ function toUser(){
         inputFieldContainer.classList.add("activeInput");
       });
     }
-  });
+//  });
   closeBtn.addEventListener("click", () =>{
     //inputFieldContainer.classList.remove("activeInput");
     
@@ -194,7 +195,7 @@ function toSignupForm(){
     });
   });
 }
-function removeExistingFetched() {
+async function removeExistingFetched() {
    const existing = document.querySelector(".input-field-container");
   if (!existing) return;
 
@@ -205,13 +206,11 @@ function removeExistingFetched() {
   }, 400);
 }
 
-let burgerOpen;
-let burgerClose;
-function burgerContent(){
-  burgerOpen = document.getElementById("burger");
-  burgerClose = document.getElementById("burger-close");
-  if (!burgerOpen || !burgerClose) return;
-  burgerOpen.addEventListener("click", async () =>{
+
+async function burgerContent(){
+  const burgerOpen = document.getElementById("burger");
+  const burgerClose = document.getElementById("burger-close");
+  if (burgerOpen) {
     removeExistingFetched();
     removeExistingAboutUs()
     removeExistingUserDisplay();
@@ -240,12 +239,17 @@ function burgerContent(){
     if (userBtn) userBtn.disabled = false;
     burgerOpen.style.display = "none";
     burgerClose.style.display = "flex";
-  });
+  }
+  
+  if(burgerClose){
   burgerClose.addEventListener("click", () =>{
     removeExistingAboutUs();
     burgerOpen.style.display = "flex";
     burgerClose.style.display = "none";
   });
+  }
+
+
 }
 function removeExistingAboutUs() {
   const existing = document.querySelector(".about-us-mobile-container");
@@ -254,7 +258,11 @@ function removeExistingAboutUs() {
     setTimeout(() => { //Delay to allow CSS transition
         existing.remove();
       }, 400);
-  burgerOpen.style.display = "flex";
-  burgerClose.style.display = "none";
-  
 }
+
+async function initFunctions(){
+  mobileNavigationBtn();
+  toSignupForm();
+}
+document.addEventListener("DOMContentLoaded", initFunctions);
+window.addEventListener("DOMContentLoaded", initFunctions);

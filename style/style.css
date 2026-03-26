@@ -1,205 +1,4 @@
 
-
-
-
-
-@media only screen and (max-width: 599px){
-
-    
-   
-   
-
-    
-    
-    /*These below are needed for 540*/
-    .input-field-container{
-        position: fixed;
-        inset: 0;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background-color: goldenrod;
-        z-index: 99;
-        transform: translateX(100%);
-        opacity: 0;
-        transition: transform 0.6s ease, opacity 0.6s ease;
-        overflow-x: auto;
-    }
-    .logged-user-container{
-        width: 100vw;
-        height: 100vh;
-        transform: translateX(100%);
-        opacity: 0;
-        transition: transform 0.6s ease, opacity 0.6s ease;
-    }
-    .activeInput {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    .hideInputField{
-        display: none;
-    }
-    .close-input-field,
-    .close-signup-form{
-        width: 50px;
-        height: 50px;
-        margin: 5px 0 0 5px;
-        font-size: 2rem;
-        font-weight: bolder;
-        border: none;
-        background-color: transparent;
-    }
-    #burger> img,
-    #burger-close> img{
-        width: 30px;
-        height: 30px;
-    }
-}
-
-
-
-/*Coffee Beans HTML*/
-.coffee-beans-first-section{
-    background-image: url('../images/coffeeBeans/firstSection/vecteezy_morning-brew-coffee-beans-and-hot-cup_74379678.jpg');
-    background-size: 100% 600px;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 500px;
-    display: flex;
-
-    align-items: center;
-}
-.coffee-beans-first-section-text{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    gap: 3em;
-}
-.coffee-beans-first-section > div > h2,
-.coffee-beans-first-section > div > p{
-    color: whitesmoke;
-    width: 80%;
-    margin: 0 auto;
-}
-.coffee-beans-first-section > div > h2{
-    font-size: clamp(1.5rem, 3.5vw, 3rem);
-    color: black;
-    text-shadow:
-    -2px -2px 0 goldenrod,
-     2px -2px 0 goldenrod,
-    -2px  2px 0 goldenrod,
-     2px  2px 0 goldenrod;
-}
-.coffee-beans-first-section > div > p{
-    font-size: clamp(1rem, 2vw, 2rem);
-    text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
-.coffee-of-the-week{
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    gap: 2em;
-    padding: 3em 0;
-}
-.article-left-panel-container{
-    flex: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.article-left-panel-container-image-container{
-    padding: 5px;
-}
-.article-left-panel-container-image-container > img{
-    width: clamp(450px, 1.5vw, 500em);
-    height: clamp(350px, 1.5vw, 400em);
-    border-radius: 1em;
-    box-shadow: 0 3px 6px #000000;
-}
-.article-left-panel-button-list{
-    width: clamp(450px, 1.5vw, 500em);
-    display: flex;
-    justify-content: space-between;
-    gap: 2em;
-    padding: 0;
-    margin-top: 50px;
-}
-.article-left-panel-button{
-    width: clamp(80px, 1.5vw, 100em);
-    height: clamp(80px, 1.5vw, 100em);
-    padding: 0;
-    margin: 0;
-    border: none;
-    background-color: transparent;
-}
-.article-left-panel-button > img{
-    width: inherit;
-    height: inherit;
-    padding: 0;
-    margin: 0;
-    border-radius: 1em;
-}
-.cappuccino-button-carousel{
-    opacity: 0.5;
-}
-.activeButton{
-    opacity: 1;
-}
-.article-right-panel-container-text{
-    display: flex;
-    flex-direction: column;
-}
-.article-right-panel-container-text > h3{
-   margin-top: 100px;
-    font-size: clamp(1.3em, 3vw, 4em);
-}
-.coffee-bean-stars{
-    margin-top: 10px;
-    font-size: clamp(1.2em, 2.5vw, 3.5em);
-    display: flex;
-}
-.coffee-bean-stars > p{
-    margin-right: 20px;
-}
-.coffee-bean-stars > i{
-    font-size: clamp(14px, 1.5vw, 24px);
-    margin: auto 0;
-    color: goldenrod;
-    text-shadow:
-    -1px -1px 0 #4F3727,
-     1px -1px 0 #4F3727,
-    -1px  1px 0 #4F3727,
-     1px  1px 0 #4F3727;
-}
-.article-right-panel-container-text > p:nth-child(3){
-    margin-top: 10px;
-    font-size: clamp(1em, 1.5vw, 2.5em);
-}
-.article-right-panel-container-text > p:last-child{
-    margin-top: 10px;
-    font-size: clamp(1.2em, 2vw, 3em);
-}
-.article-right-panel-button-list{
-    margin-top: 50px;
-    display: flex;
-}
-.article-right-panel-button-list > button{
-    font-size: clamp(0.8em, 1.3vw, 2em);
-    background-color: #4F3727;
-    border: none;
-    color: whitesmoke;
-    padding: 10px 15px;
-    box-shadow: 0 5px 20px #6F4E37;
-    border-radius: 0.25em;
-}
-.article-right-panel-button-list> button > img{
-    margin: 0 10px;
-}
 .product-sale-list-container{
     background-color: #7f482f;
     padding: 50px 0;
@@ -458,44 +257,8 @@
 #checkout-button{
     cursor: pointer;
 }
-@media only screen and (max-width: 540px){
-    .coffee-beans-first-section{
-        background-size: 100% 300px;
-        height: 300px; 
-    }
-    .coffee-of-the-week{ 
-        width: 100%; 
-        flex-direction: column;
-        gap: 1em; 
-    }
-    .article-left-panel-container-image-container > img{
-        width: clamp(350px, 1.5vw, 500em); 
-        height: clamp(250px, 1.5vw, 400em); 
-    }
-    .article-left-panel-button-list{
-        justify-content: center; 
-        width: 80%;
-        margin: 10px auto 0 auto;
-    }
-    .article-left-panel-button{
-        width: clamp(65px, 1.5vw, 100px); 
-        height: clamp(65px, 1.5vw, 100px); 
-    }
-    .article-right-panel-container-text{
-        width: 90%; 
-        margin: 0 auto; 
-    }
-    .article-right-panel-container-text > h3{
-        margin-top: 0px; 
-    }
-    .article-right-panel-button-list{
-        width: 90%; 
-        margin: 10px auto 0 auto; 
-    }
-    .article-right-panel-button-list > button{
-        display: flex;
-        align-items: center;
-    }
+@media only screen and (max-width: 599px){
+    
     .product-sale-list-container{
         padding: 20px 0; 
     }
@@ -547,42 +310,10 @@
         z-index: 9;
     }
 }
-@media (min-width: 541px) and (max-width: 768px){
-    .coffee-beans-first-section{
-        background-size: 100% 400px; 
-        height: 400px; 
-    }
-    .coffee-beans-first-section-text{
-        width: 60%; 
-        gap: 150px;
-    }
-    .coffee-beans-first-section > div > h2,
-    .coffee-beans-first-section > div > p{
-        width: 80%; 
-        margin: 0 0 0 20px; 
-    }
-    .coffee-of-the-week{
-        width: 95%; 
-        gap: 20px; 
-        padding: 30px 0; 
-    }
-    .article-left-panel-container-image-container > img{
-        width: clamp(350px, 1.5vw, 500em); 
-        height: clamp(250px, 1.5vw, 400em); 
-    }
-    .article-left-panel-button-list{
-        width: clamp(350px, 1.5vw, 500em);
-        justify-content: center; 
-        gap: 20px; 
-        margin: 10px 0 0 0; 
-    }
-    .article-right-panel-container-text > h3{
-       margin-top: 10px; 
-    }
-    .article-right-panel-button-list > button{
-        display: flex;
-        align-items: center; 
-    }
+@media (min-width: 600px) and (max-width: 768px){
+
+
+   
     .product-sale-list-container{
         padding: 30px 0; 
     }
@@ -900,7 +631,7 @@ address> a:hover{
 .service-fourth-section-container> p{
     font-size: clamp(1rem, 1.3rem, 1.7rem);
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
     .service-second-section-container{
         width: 100vw; 
         background-color: white; 
@@ -952,7 +683,7 @@ address> a:hover{
         margin: 0; 
     }
 }
-@media (min-width: 541px) and (max-width:768px){
+@media (min-width: 600px) and (max-width:768px){
     .service-first-section-container{
         background-size: 100% 300px; 
         padding: 0; 
@@ -1245,7 +976,7 @@ address> a:hover{
 .about-us-fourth-section-container> ul> li> a:hover{
     background-color: rgba(0, 0, 0, 0.8);
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
     .about-us-content-image-container{
         width: 90%; 
         margin: 1em auto 0 auto; 
@@ -1387,7 +1118,7 @@ address> a:hover{
         width: 50px;
     }
 }
-@media (min-width: 541px) and (max-width: 768px){
+@media (min-width: 600px) and (max-width: 768px){
     .about-us-second-section-container{
         width: 95%; 
         gap: 10px; 
@@ -1585,7 +1316,7 @@ address> a:hover{
     background-color: goldenrod;
     border-radius: 0.25em;
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
     .cart-title{
         margin-top: 20px;
         padding-bottom: 20px; 
@@ -1619,7 +1350,7 @@ address> a:hover{
         gap: 10px; 
     }
 }
-@media (min-width: 541px) and (max-width: 768px){
+@media (min-width: 600px) and (max-width: 768px){
     .cart-title{
         margin-top: 30px; 
         padding-bottom: 20px; 
@@ -1912,7 +1643,7 @@ body.no-scroll {
     border-radius: 0.25em;
     box-shadow: 2px 3px 6px #85746b;
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
     .single-seat-window{
         padding-top: 10px; 
     }
@@ -1996,7 +1727,7 @@ body.no-scroll {
         width: 90%; 
     }
 }
-@media (min-width: 541px) and (max-width: 768px){
+@media (min-width: 600px) and (max-width: 768px){
     .single-seat-window{
         padding-top: 20px;
     }
@@ -2143,7 +1874,7 @@ input.error-border {
 .taken.error-border {
   border: 2px solid red;
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
     .sign-up-form{
         width: 90%; 
         padding-top: 0px; 
@@ -2169,7 +1900,7 @@ input.error-border {
         color: whitesmoke; 
     }
 }
-@media (min-width: 541px) and (max-width: 768px) {
+@media (min-width: 600px) and (max-width: 768px) {
     .sign-up-form{
         margin: 50px auto 0 auto; 
     }
@@ -2278,7 +2009,7 @@ input.error-border {
     background-color: rgba(0,0,0, 0.8);
     transition: 0.3s;
 }
-@media only screen and (max-width: 540px){
+@media only screen and (max-width: 599px){
     .login-form{
         width: 90%;
         margin: 10px auto 50px auto;
@@ -2366,7 +2097,7 @@ input.error-border {
        border-radius: 0.25em;
     }
 }
-@media (min-width: 541px) and (max-width: 768px){
+@media (min-width: 600px) and (max-width: 768px){
     .login-form{
         width: 70%; 
         margin: 50px auto 100% auto; 

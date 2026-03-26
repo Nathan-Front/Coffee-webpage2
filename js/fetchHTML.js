@@ -1,16 +1,18 @@
+let mobileLoaded = false;
 
 async function fetchHtmlContent(){
     const resMobileFoot = await fetch("./mobileNavigation.html");
     const mobileFootHtml = await resMobileFoot.text();
 
-    document.body.insertAdjacentHTML("afterend", mobileFootHtml);
+    document.body.insertAdjacentHTML("beforeend", mobileFootHtml);
 }
 
 async function initFetch(){
-    if(window.innerWidth > 599)return;
-    
+    if(window.innerWidth > 599) return;
+    if(mobileLoaded) return;
+    mobileLoaded = true;
     fetchHtmlContent();
-    
 }
+
 document.addEventListener("DOMContentLoaded", initFetch);
 window.addEventListener("resize", initFetch);

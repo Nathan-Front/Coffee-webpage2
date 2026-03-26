@@ -1,6 +1,6 @@
 
 async function mobileFooterFetch() {
-    if(window.innerWidth > 540) return;
+    if(window.innerWidth > 599) return;
    
     mobileFooter();
 }
