@@ -1,6 +1,6 @@
 
 async function mobileNavFetch(){
-  if(window.innerWidth > 540) return; 
+  if(window.innerWidth > 599) return; 
   const mobileNav = await fetch("./mobileNavigation.html");
   const navHtml =await mobileNav.text();
   document.body.insertAdjacentHTML("beforeend", navHtml);
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", mobileNavFetch);
 
 let mobileNavBound = false;
 function mobileNavigationBtn(){
-  if(window.innerWidth > 540) return; 
+  if(window.innerWidth > 599) return; 
   if(mobileNavBound) return;
   mobileNavBound = true;
   document.addEventListener("click", (e)=>{
@@ -37,7 +37,7 @@ function mobileNavigationBtn(){
 
 let userBtn;
 function toUser(){
-  if(window.innerWidth > 540) return;
+  if(window.innerWidth > 599) return;
   userBtn = document.getElementById("mobile-user-button");
   if(!userBtn) return;
   
