@@ -28,9 +28,15 @@
     margin: 0;
     padding: 0;
 }
+.cart-item-list> li> div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .cart-item-container{
     width: 90%;
     margin: 5px auto;
+    padding: 0 5px;
     display: flex;
     align-items: flex-end;
     border: 1px gray solid;
@@ -38,11 +44,6 @@
 .item-info{
     flex: 40%;
     display: flex;
-}
-.price,
-.quantity,
-.total{
-    flex: 20%;
 }
 .item-info img{
     width: clamp(150px, 10vw, 200px);
@@ -64,51 +65,62 @@
     border: none;
     font-weight: 500;
     background-color: goldenrod;
-    padding: 5px 20px;
+    padding: 
+    clamp(3px, 2vw, 10px)
+    clamp(10px, 5vw, 30px);
     border-radius: 0.25em;
+}
+.price> div,
+.quantity> div,
+.total> div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: inherit;
 }
 .price,
 .quantity,
 .total{
+    flex: 20%;
     text-align: right;
     margin-bottom: 45px;
 }
 .quantity> h3{
     display: none;
 }
-.quantity> button{
+.quantity> div> button{
     border: none;
     background-color: goldenrod;
     font-weight: bolder;
-    padding: 5px 20px;
+    padding: 
+    clamp(3px, 1vw, 5px)
+    clamp(10px, 1.5vw, 20px);
     border-radius: 0.25em;
 }
+.quantity> div> button:first-child{
+    margin-right: 25px;
+}
+.quantity> div> button:last-child{
+    margin-left: 25px;
+}
 .item-cart-description> button,
-.quantity> button:hover{
+.quantity> div> button:hover{
     cursor: pointer;
 }
-.quantity> span{
-    padding: 0 20px;
-}
-.price> h3> span,
-.total> h3> span{
-    font-weight: 100;
-}
-.price>h3,
-.total> h3{
-    display: flex;
-    justify-content: end;
-    position: relative;
-    margin-right: 50px;
-}
-.price>h3> span,
-.total> h3> span{
+.quantity> div> span{
+    padding: 0 10px;
     position: absolute;
-    bottom: 0;
-    right: -50px;
 }
 .total{
     margin-right: 10px;
+}
+.total> div> h3{
+    padding-right: 60px;
+}
+.total> div> span{
+    position: absolute;
+    right: 0;
 }
 .cart-checkout-container{
    padding-bottom: 150px;
@@ -169,6 +181,14 @@
         margin-bottom: 10px; 
         display: flex; 
     }
+    .quantity> button:nth-child(2),
+    .quantity> button:last-child{
+        margin: 0;
+        
+    }
+    .quantity> span{
+        position: relative;
+    }
     .quantity> button:nth-child(2){
          margin-left: 10px; 
     }
@@ -196,10 +216,6 @@
     .quantity,
     .total{
         margin-bottom: 15px; 
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
     }
     .quantity{
         flex: 25%; 

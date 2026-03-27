@@ -92,7 +92,8 @@ function coffeeMonthAddToCart(){
         //productQty += 1;
         cartContent.cartCounter = cartContent.items.reduce((total, item) => total + (item.itemQty || 0), 0);
         localStorage.setItem("cartContent", JSON.stringify(cartContent));
-        document.getElementById("cart-item-counter-display").textContent = cartContent.cartCounter;            
+        document.getElementById("cart-item-counter-display").textContent = cartContent.cartCounter;     
+        alert("Item added to cart");       
     }); 
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -130,16 +131,24 @@ function itemInCart(){
             </div>
         </div>
         <div class="price">
-            <h3>Price: $<span>${item.itemPrice}</span></h3>
+            <div>
+                <h3>Price:</h3>
+                <span>$${item.itemPrice}</span>
+            </div>
         </div>
         <div class="quantity">
             <h3>Quantity:</h3>
-            <button class="minus-btn">-</button>
-            <span class="item-qty">${item.itemQty}</span>
-            <button class="add-btn">+</button>
+            <div>
+                <button class="minus-btn">-</button>
+                <span class="item-qty">${item.itemQty}</span>
+                <button class="add-btn">+</button>
+            </div>
         </div>
         <div class="total">
-            <h3>Total: $<span class="total-display">${item.itemSubTotal}</span></h3>
+            <div>
+                <h3>Total:</h3>
+                <span class="total-display">$${item.itemSubTotal}</span>
+            </div>
         </div>
     `;
     ul.appendChild(itemColumn);
@@ -211,7 +220,8 @@ function addToCart(){
             localStorage.setItem("cartContent", JSON.stringify(cartContent));
             document.getElementById("cart-item-counter-display").textContent = cartContent.cartCounter;  
             updateCoffeeSlideWidth();
-updateCoffeeCarousel();
+            updateCoffeeCarousel();
+            alert("Item added to cart");
         });
     });
 }
@@ -293,7 +303,7 @@ function addToCartOther(){
             cartContent.cartCounter = cartContent.items.reduce((total, item) => total + item.itemQty, 0);
             localStorage.setItem("cartContent", JSON.stringify(cartContent));
             document.getElementById("cart-item-counter-display").textContent = cartContent.cartCounter; 
-            alert("Item added in the cart");
+            alert("Item added to cart");
         });
     });
 }
@@ -347,9 +357,11 @@ function itemIncreaseDecrease(){
         displayTax();
         displayGrandTotal();
         cartPageCounter();
+        itemInCart();
     });
 }
-window.addEventListener("DOMContentLoaded", itemIncreaseDecrease);
+document.addEventListener("DOMContentLoaded", itemIncreaseDecrease);
+
 
 function deleteFromCart(){
     const cartContainer = document.getElementById("cart-item-display-container");
@@ -563,11 +575,11 @@ const coffeeDots = document.querySelector(".coffee-dots");
 function coffeeDot(){
     if(!coffeeDots) return;
     let coffeeTotalDots = 0 
-if(window.innerWidth > 599){
-    coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 1;
-} else {
-    coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 4;
-} 
+    if(window.innerWidth > 599){
+        coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 1;
+    } else {
+        coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 4;
+    }    
     coffeeDots.innerHTML = "";
     for ( let i = 0; i < coffeeTotalDots; i++) {
         const dot = document.createElement("button");
@@ -584,6 +596,7 @@ if(window.innerWidth > 599){
 }
 document.addEventListener("DOMContentLoaded", coffeeDot);
 function updateCoffeeDot(){
+    if(!coffeeDots) return;
     const dots = coffeeDots.querySelectorAll("button");
     if(!dots) return;
     dots.forEach((dot, coffeeIndex) =>{
@@ -625,12 +638,13 @@ function getCarouselSlideWidth(){
 function coffeeBeansCarouselTouch(){
     const carouselWrapper = document.querySelector(".product-sale-list-item-container");
     const coffeeSlides = document.querySelectorAll(".product-sale-item-container");
+    if(!carouselWrapper || !coffeeSlides.length || !coffeeSlides) return;
     let index = coffeeCurrentIndex;
     let startX = 0;
     let isDragging = false;
     let currentTranslate = 0;
     const {perSlideWidth, fullWidth, wrapWidth} = getCarouselSlideWidth();
-    if(!carouselWrapper || !coffeeSlides.length || !coffeeSlides || !perSlideWidth || !fullWidth || !wrapWidth) return;
+    if(!perSlideWidth || !fullWidth || !wrapWidth) return;
     function updateSlider(){
         const centerOffset = (wrapWidth - perSlideWidth) / 2;
         const translateX = -index * fullWidth + centerOffset;
