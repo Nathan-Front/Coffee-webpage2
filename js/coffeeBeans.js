@@ -496,16 +496,16 @@ const carouselWrapper = document.querySelector(".product-sale-list-item-containe
 const coffeeSlides = document.querySelectorAll(".product-sale-item-container");
 
 let coffeeVisibleSlides;
-function initialTestimonySlide(){
-  if(window.innerWidth <= 540){
+function initialItemSlide(){
+  if(window.innerWidth <= 599){
     coffeeVisibleSlides = 1;
-  } else if(window.innerWidth <= 768){
+  } else if (window.innerWidth <= 768){
     coffeeVisibleSlides = 3;
   }else{
     coffeeVisibleSlides = 4;
   }
 }
-initialTestimonySlide();
+
 let coffeeCurrentIndex = 0;
 let coffeeSlideWidth;
 
@@ -522,16 +522,13 @@ function updateCoffeeSlideWidth(){
 
 function updateCoffeeCarousel(){
     if(!carouselWrapper) return;
+    if(window.innerWidth <= 599) return;
     carouselWrapper.style.transform = `translateX(${-coffeeCurrentIndex * coffeeSlideWidth}px)`;
     updateCoffeeDot();
 }
-window.addEventListener("resize", () =>{
-    updateCoffeeSlideWidth();
-    updateCoffeeCarousel();
-});
 
-function addMinusQty(){
-    
+function cofeeSlides(){
+    initialItemSlide();
 const coffeePrevBtn = document.querySelector(".coffeePrev");
 const coffeeNextBtn = document.querySelector(".coffeeNext");
 const coffeeMaxIndex = coffeeSlides.length - coffeeVisibleSlides;
@@ -555,25 +552,27 @@ coffeeNextBtn.addEventListener("click", () =>{
     updateCoffeeCarousel();
 });
 }
-addMinusQty();
+cofeeSlides();
+
 
 
 const coffeeDots = document.querySelector(".coffee-dots");
-let coffeeTotalDots = 0 
-if(window.innerWidth > 540){
-    coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 1;
-} else {
-    coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 4;
-}
+
 
 function coffeeDot(){
     if(!coffeeDots) return;
+    let coffeeTotalDots = 0 
+if(window.innerWidth > 599){
+    coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 1;
+} else {
+    coffeeTotalDots = coffeeSlides.length - coffeeVisibleSlides + 4;
+} 
     coffeeDots.innerHTML = "";
     for ( let i = 0; i < coffeeTotalDots; i++) {
         const dot = document.createElement("button");
 
         dot.addEventListener("click", () =>{      
-            if(window.innerWidth <= 540) return; 
+            if(window.innerWidth <= 599) return; 
             coffeeCurrentIndex = i;
             updateCoffeeCarousel();
         });
@@ -582,6 +581,7 @@ function coffeeDot(){
     }
      updateCoffeeDot();
 }
+document.addEventListener("DOMContentLoaded", coffeeDot);
 function updateCoffeeDot(){
     const dots = coffeeDots.querySelectorAll("button");
     if(!dots) return;
@@ -596,7 +596,6 @@ window.addEventListener('load', () => {
   updateCoffeeCarousel();
   updateCoffeeDot();
 });
-document.addEventListener("DOMContentLoaded", coffeeDot);  
 
 function getCarouselSlideWidth(){
     const carouselWrapper = document.querySelector(".product-sale-list-item-container");
@@ -620,10 +619,12 @@ function getCarouselSlideWidth(){
    const fullWidth = perSlideWidth + marginLeft + marginRight + gap;
         return {perSlideWidth, fullWidth, wrapWidth};
 }
+
+
 function coffeeBeansCarouselTouch(){
     const carouselWrapper = document.querySelector(".product-sale-list-item-container");
     const coffeeSlides = document.querySelectorAll(".product-sale-item-container");
-    let index = 0;
+    let index = coffeeCurrentIndex;
     let startX = 0;
     let isDragging = false;
     let currentTranslate = 0;
@@ -638,6 +639,7 @@ function coffeeBeansCarouselTouch(){
         });*/
         carouselWrapper.style.transform = `translateX(${currentTranslate}px)`;
     }
+    updateSlider();
     carouselWrapper.addEventListener("touchstart", (e) =>{
         startX = e.touches[0].clientX;
         isDragging = true;}, 
@@ -664,14 +666,45 @@ function coffeeBeansCarouselTouch(){
         
     });
 }
-window.addEventListener("resize", coffeeBeansCarouselTouch);
 document.addEventListener("DOMContentLoaded", () => {
     if(document.body.classList.contains("coffee-beans-page")){
-        coffeeBeansCarouselTouch();
+        if(window.innerWidth <= 599){
+            coffeeBeansCarouselTouch();
+        } else{
+            updateCoffeeSlideWidth();
+            updateCoffeeCarousel();
+        }   
     }
 });
+
 window.addEventListener("resize", () => {
-  initialTestimonySlide();
-  updateCoffeeSlideWidth();
-  updateCoffeeCarousel();
+   
+   
+    if(window.innerWidth <= 599){
+        coffeeBeansCarouselTouch();
+    } else{
+        updateCoffeeSlideWidth();
+        updateCoffeeCarousel();
+    }
+    
 });
+
+function repositionCarousel(){
+    initialItemSlide();
+    coffeeDot();
+    if(window.innerWidth <= 599){
+        const sizes = getCarouselSlideWidth();
+        if(!sizes) return;
+
+        const {perSlideWidth, fullWidth, wrapWidth} = sizes;
+        const centerOffset = (wrapWidth - perSlideWidth) / 2;
+        const translateX = -coffeeCurrentIndex * fullWidth + centerOffset;
+
+        carouselWrapper.style.transform = `translateX(${translateX}px)`;
+    } else {
+        updateCoffeeSlideWidth();
+        updateCoffeeCarousel();
+    }
+    updateCoffeeDot();
+}
+window.addEventListener("resize", repositionCarousel);
