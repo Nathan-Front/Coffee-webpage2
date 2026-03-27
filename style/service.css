@@ -1,0 +1,236 @@
+.service-body-container{
+    background-color: white;
+    
+}
+.service-first-section-container{
+    height: clamp(250px, 30vw, 500px);
+    display: flex;
+    padding: 50px 0;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+.service-first-section-container::after{
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.1);
+    z-index: -1;
+}
+.service-first-section-container::before{
+    content: "";
+    inset: 0;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.1);
+    z-index: -1;
+    background-image: url('../images/services/firstSection/vecteezy_roasted-coffee-beans-with-deep-brown-tones-perfect-for_68693295.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.03);
+}
+.service-first-section-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 50px;
+    width: 60%;
+}
+.service-first-section-content> h2,
+.service-first-section-content> p{
+    color: whitesmoke;
+    width: 80%;
+}
+.service-first-section-content> p{
+    padding: 10px 0;
+}
+.service-first-section-content> p> a{
+    color: whitesmoke;
+}
+.service-first-section-content> p> a:hover{
+    cursor: initial;
+}
+address{
+    width: fit-content;
+    margin-top: clamp(10px, 2vw, 30px); 
+}
+address> a{
+    color: #3B3030;
+    background-color: goldenrod;
+    padding: 
+    clamp(5px, 1vw, 20px)
+    clamp(5px, 1vw, 20px);
+    border-radius: 0.25em;
+    box-shadow: 2px 3px 6px #3B3030;
+}
+address> a:hover{
+    color: #c89b3c;
+    box-shadow: 2px 3px 6px #c89b3c;
+    background-color: black;
+    background-color: rgba(0,0,0, 0.8);
+    transition: 0.3s;
+}
+.service-first-section-container> img{
+    width: clamp(150px, 30vw, 600px);
+    height: clamp(130px, 20vw, 250px);
+    border-radius: 0.5em;
+    box-shadow: 0 3px 6px #85746b;
+    margin: auto 0;
+}
+@media only screen and (max-width: 599px){
+    .service-first-section-content{
+        width: 90%;
+    }
+    .service-first-section-container> img{
+       display: none;
+    }
+    .service-first-section-content> h2,
+    .service-first-section-content> p{
+     width: 100%;
+    }
+}
+
+.service-second-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+.service-second-section-container> h2{
+    padding: 50px 0 20px 0;
+    margin-left: 50px;
+    color: #4F3727; 
+}
+.barista-list-container{
+    display: flex;
+}
+.barista-list-container> div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding:  0;
+}
+.barista-list-container> div> h3{
+    margin-left: 50px;
+    padding: 20px 0;
+    font-size: clamp(1.2em, 2vw, 2em);
+    
+}
+.barista-list-container> div> p{
+    margin-left: 50px;
+    padding: 5px 0;
+    font-weight: bolder;
+
+}
+.barista-list-container> div> p> span{
+    font-weight: 100;
+}
+.barista-list-container> img{
+    width: clamp(280px, 35vw, 600px);
+    height: clamp(200px, 20vw, 450px);
+    margin: auto;
+    border-radius: 1em;
+    box-shadow: 0 3px 6px #85746b;
+}
+.service-second-section-container div:nth-child(3){
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    gap: none;
+    padding: 0;
+    margin: 0;
+}
+.service-second-section-container div:nth-child(3)>div{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: inherit;
+    
+}
+.service-second-section-container div:nth-child(3)>img{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.service-second-section-container div:nth-child(5){
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    gap: none;
+    padding: 0;
+    margin: 0;
+}
+.service-second-section-container div:nth-child(5)>div{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: inherit;
+    
+}
+.service-second-section-container div:nth-child(5)>img{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.service-second-section-container div:nth-child(5)> div> p{
+    font-weight: 100;
+}
+.email-resume{
+    margin-left: 50px;
+}
+@media only screen and (max-width: 599px){
+    .service-second-section-container{
+        width: 100vw; 
+        background-color: white; 
+        gap: 1em; 
+        padding-bottom: 20px;
+    }
+    .service-second-section-container> h2{
+        width: 90%; 
+        padding: 20px 0 0 0; 
+        margin: 0 auto; 
+    }
+    .barista-list-container,
+    .service-second-section-container div:nth-child(3),
+    .service-second-section-container div:nth-child(5){
+        width: 100vw; 
+        display: flex;
+        flex-direction: column; 
+    }
+    .barista-list-container> div,
+    .service-second-section-container div:nth-child(3)>div,
+    .service-second-section-container div:nth-child(5)>div{
+        width: 90%; 
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        padding:  0;
+
+    }
+    .barista-list-container> div> h3{
+        margin-left: 0;
+        padding: 10px 0;  
+    }
+    .barista-list-container> div> p{
+        margin-left: 0; 
+    }
+    .barista-list-container> img{
+        width: 70%;
+    }
+    .service-second-section-container div:nth-child(5)> img{
+        display: none; 
+    }
+    .email-resume{
+        margin: 20px 0 0 0; 
+    }
+}
+@media (min-width: 600px) and (max-width:768px){
+   .service-second-section-container> h2{
+        padding: 20px 0 0 0;
+    }
+}

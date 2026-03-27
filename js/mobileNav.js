@@ -260,9 +260,9 @@ function removeExistingAboutUs() {
       }, 400);
 }
 
-async function initFunctions(){
+function initFunctions(){
   mobileNavigationBtn();
   toSignupForm();
 }
 document.addEventListener("DOMContentLoaded", initFunctions);
-window.addEventListener("DOMContentLoaded", initFunctions);
+window.addEventListener("resize", initFunctions);

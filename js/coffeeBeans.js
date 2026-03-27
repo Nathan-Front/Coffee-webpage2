@@ -1,3 +1,4 @@
+
 function imageButtonChanger(){  
     const buttonOfTheDay = document.querySelectorAll(".cappuccino-button-carousel");
     buttonOfTheDay.forEach((e) =>{

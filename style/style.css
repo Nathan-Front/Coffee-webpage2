@@ -3,179 +3,35 @@
 
 
 /*Services HTML*/
-.service-body-container{
-    background-color: white;
-}
-.service-first-section-container{
-    background-image: url('../images/services/firstSection/vecteezy_roasted-coffee-beans-with-deep-brown-tones-perfect-for_68693295.jpg');
-    background-size: 100% 600px;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    padding: 50px 0;
-}
-.service-first-section-content{
-    display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    width: 60%;
-}
-.service-first-section-content> h2{
-    width: 60%;
-}
-.service-first-section-content> h2,
-.service-first-section-content> p{
-    color: whitesmoke;
-}
-.service-first-section-content> p{
-    padding: 10px 0;
-}
-.service-first-section-content> p> a{
-    color: goldenrod;
-}
-address{
-    width: fit-content;
-    margin-top: 50px; 
-}
-address> a{
-    color: black;
-    background-color: goldenrod;
-    padding: 15px 10px;
-    border-radius: 0.25em;
-    box-shadow: 2px 3px 6px #85746b;
-}
-address> a:hover{
-    color: goldenrod;
-    background-color: black;
-    background-color: rgba(0,0,0, 0.8);
-    transition: 0.3s;
-}
-.service-first-section-container> img{
-    width: clamp(400px, 25vw, 600px);
-    height: clamp(200px, 25vw, 250px);
-    border-radius: 0.5em;
-    box-shadow: 0 3px 6px #85746b;
-}
-.service-second-section-container{
-   /* background-image: url('../images/Services/Barista/ChatGPT\ Image\ Dec\ 27\,\ 2025\,\ 08_54_21\ PM.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;*/
-    display: flex;
-    flex-direction: column;
-    gap: 3em;
-}
-.service-second-section-container> h2{
-    padding: 50px 0 20px 0;
-    margin-left: 50px;
-    color: goldenrod;
-}
-.barista-list-container{
-    display: flex;
-}
-.barista-list-container> div{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    padding:  0;
 
-}
-.barista-list-container> div> h3{
-    margin-left: 50px;
-    padding: 20px 0;
-    font-size: clamp(1.5em, 1.5vw, 2em);
-    
-}
-.barista-list-container> div> p{
-    margin-left: 50px;
-    padding: 5px 0;
-    font-weight: bolder;
-
-}
-.barista-list-container> div> p> span{
-    font-weight: 100;
-}
-.barista-list-container> img{
-    width: clamp(400px, 25vw, 600px);
-    height: clamp(200px, 25vw, 250px);
-    margin: auto;
-    border-radius: 1em;
-    box-shadow: 0 3px 6px #85746b;
-}
-.service-second-section-container div:nth-child(3){
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr;
-    gap: none;
-    padding: 0;
-    margin: 0;
-}
-.service-second-section-container div:nth-child(3)>div{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    width: inherit;
-    
-}
-.service-second-section-container div:nth-child(3)>img{
-     grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.service-second-section-container div:nth-child(5){
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr;
-    gap: none;
-    padding: 0;
-    margin: 0;
-}
-.service-second-section-container div:nth-child(5)>div{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    width: inherit;
-    
-}
-.service-second-section-container div:nth-child(5)>img{
-     grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.service-second-section-container div:nth-child(5)> div> p{
-    font-weight: 100;
-}
-.email-resume{
-    margin-left: 50px;
-}
 
 .service-third-section-container{
     display: flex;
     flex-direction: column;
-    padding: 50px 0 0 0;
+    padding: 0;
+    background-color: goldenrod;
 }
 .service-third-section-container> h2{
-    padding: 30px 0 30px 50px;
-    background-color: goldenrod;
+    padding: 
+    clamp(15px, 5vw, 40px) 0;
+    margin: 0 0 0 50px;
+     color: #4F3727;
 }
 .bread-container-text{
     background-image: url('../images/services/thirdSection/vecteezy_fresh-bread-on-dark-background_5042859.jpg');
-    background-size: 100% 500px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     color: white;
     padding: 100px 0;
-    
+    height: clamp(250px, 30vw, 600px);
 }
 .bread-container-text> p{
     margin-left: 50px;
-    font-size: clamp(1.2rem, 1.5rem, 2rem);
+    font-size: clamp(1.1rem, 2vw, 2rem);
 }
 .bread-container-text> ul{
     padding: 0;
@@ -183,17 +39,36 @@ address> a:hover{
    
 }
 .bread-container-text> ul> li{
-     font-size: clamp(1rem, 1.2rem, 1.5rem);
-     padding: 2px 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    padding: 2px 0;
 }
 .relaxing-container{
+    width: 100%;
+    margin: 0 auto;
+    padding:  50px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.relaxing-container::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0, 0.1);
+    z-index: -1;
+}
+.relaxing-container::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0, 0.1);
+    z-index: -1;
     background-image: url('../images/services/fourthSection/high-angle-view-delicious-espresso-coffee-cup-white-wooden-table.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
-    margin: 0 auto;
-    padding:  50px 0;
+    filter: blur(4px);
+    transform: scale(1.06);
 }
 .relaxing-container> div{
     display: grid;
@@ -210,13 +85,14 @@ address> a:hover{
     align-items: center;
 }
 .relaxing-container-text> p{
-    font-size: clamp(1rem, 1.3rem, 2rem);
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     width: 80%;
     text-align: center;
 }
 .relaxing-container-text> a{
     width: fit-content;
-    padding: 15px 10px;
+    padding: clamp(10px, 1vw, 20px)
+    clamp(5px, 2vw, 10px);
     margin-top: 50px;
     font-size: clamp(0.8rem, 1rem, 1.5rem);
     background-color: goldenrod;
@@ -256,8 +132,8 @@ address> a:hover{
     box-shadow: 0 3px 6px #85746b;
 }
 .relaxing-container> div> img{
-    width: clamp(200px, 20vw, 600px);
-    height: clamp(200px, 20vw, 500px);
+    width: clamp(150px, 20vw, 600px);
+    height: clamp(130px, 20vw, 500px);
     margin: 0 auto;
     width: 90%;
     border-radius: 1em;
@@ -266,136 +142,74 @@ address> a:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
+    padding: clamp(20px, 10vw, 40px) 0;
     background-color: goldenrod;
 }
 .service-fourth-section-container> p{
-    font-size: clamp(1rem, 1.3rem, 1.7rem);
+    font-size: clamp(1rem, 1.3vw, 1.7rem);
+    width: 90%;
+    margin: 0 auto;
 }
 @media only screen and (max-width: 599px){
-    .service-second-section-container{
-        width: 100vw; 
-        background-color: white; 
-        gap: 1em; 
-        padding-bottom: 50px;
+.service-third-section-container> h2,
+    .bread-container-text> p,
+    .bread-container-text> ul{
+        margin-left: 20px;
     }
-    .service-second-section-container> h2{
-        width: 90%; 
-        padding: 20px 0 0 0; 
-        margin: 0 auto; 
-        color: #4F3727 
+    .relaxing-container{
+        background-image: unset; 
+        padding: 0; 
     }
-    .barista-list-container,
-    .service-second-section-container div:nth-child(3),
-    .service-second-section-container div:nth-child(5){
-        width: 100vw; 
-        display: flex;
-        flex-direction: column; 
+     .relaxing-container> div{
+        display: grid;
+        grid-template-columns: auto auto auto; 
+        grid-template-rows: 1fr 1fr;
+        padding: 30px 0;
+        gap: 20px 0; 
+        width: 100%; 
+        background-color: goldenrod;
     }
-    .barista-list-container> div,
-    .service-second-section-container div:nth-child(3)>div,
-    .service-second-section-container div:nth-child(5)>div{
-        width: 90%; 
-        margin: 0 auto; 
-        display: flex;
-        flex-direction: column;
-        padding:  0;
-
+     .relaxing-container-text{
+        grid-column-start: 1; 
+        grid-column-end: 4; 
+        grid-row-start: 1; 
+        grid-row-end: 2; 
     }
-    .barista-list-container> div> h3{
-        margin-left: 0;
-        padding: 10px 0;  
+    .relaxing-container-text> a{
+        margin-top: 20px; 
+        background-color: rgb(0, 0, 0); 
+        color: rgb(255, 255, 255); 
     }
-    .barista-list-container> div> p{
-        margin-left: 0; 
+    .relaxing-container> div> img:nth-child(2){
+        grid-column-start: 1; 
+        grid-column-end: 2; 
+        grid-row-start: 2; 
+        grid-row-end: 3; 
     }
-    .barista-list-container> img{
-        width: clamp(250px, 25vw, 600px);
-        height: clamp(200px, 25vw, 250px);
+    .relaxing-container> div> img:nth-child(3){
+        grid-column-start: 2; 
+        grid-column-end: 3; 
+        grid-row-start: 2; 
+        grid-row-end: 3; 
     }
-    .service-second-section-container div:nth-child(5)> img{
-        display: none; 
+    .relaxing-container> div> img:last-child{
+        grid-column-start: 3; 
+        grid-column-end: 4; 
+        grid-row-start: 2; 
+        grid-row-end: 3; 
     }
-    .email-resume{
-        margin: 20px 0 0 0; 
-    }
-    address> a{
-        padding: 10px 8px; 
-        margin: 0; 
+    .service-fourth-section-container{
+        padding: 10px 0 80px 0;
     }
 }
 @media (min-width: 600px) and (max-width:768px){
-    .service-first-section-container{
-        background-size: 100% 300px; 
-        padding: 0; 
-        height: 300px; 
-        align-items: center; 
-        gap: 10px; 
-    }
-    .service-first-section-content{
-        padding-left: 0; 
-        width: 50%; 
-    }
-    .service-first-section-content> h2{
-        width: 100%; 
-        margin-left: 20px; 
-    }
-    .service-first-section-content> p{
-        margin-left: 20px; 
-    }
+    
 
-    address{
-        width: fit-content;
-        margin-top: 50px; 
-        margin-left: auto;
-    }
-
-    .service-first-section-container> img{
-        width: clamp(150px, 300px, 600px); 
-        margin: 0 auto; 
-        height: clamp(100px, 200px, 250px); 
-    }
-    .service-second-section-container{
-        gap: 10px; 
-        padding: 30px 0; 
-    }
-    .service-second-section-container> h2{
-        padding: 0;
-        margin-left: 20px; 
-    }
-    .barista-list-container> div> h3{
-        margin-left: 20px;  
-    }
-    .barista-list-container> div> p{
-        margin-left: 20px; 
-        width: 90%; 
-    }
-    .barista-list-container> img{
-        width: clamp(100px, 300px, 600px);
-        height: clamp(200px, 25vw, 250px);
-        margin: auto;
-        border-radius: 1em;
-        box-shadow: 0 3px 6px #85746b;
-    }
-    .email-resume{
-        margin-left: 20px; 
-        margin-top: 20px; 
-    }
-    .service-third-section-container> h2{
-        padding: 15px 0 15px 20px; 
-    }
     .bread-container-text{
-        background-size: 100% 300px; 
-        height: 300px; 
         justify-content: center; 
         padding: 0; 
     }
-    .bread-container-text> p{
-        margin-left: 20px; 
-    }
-    .bread-container-text> ul{
-        margin-left: 20px; 
-    }
+
     .relaxing-container{
         background-image: unset; 
         padding: 0; 
@@ -421,7 +235,7 @@ address> a:hover{
         color: rgb(255, 255, 255); 
     }
     .relaxing-container> div> img:nth-child(2){
-         grid-column-start: 1; 
+        grid-column-start: 1; 
         grid-column-end: 2; 
         grid-row-start: 2; 
         grid-row-end: 3; 
@@ -437,19 +251,6 @@ address> a:hover{
         grid-column-end: 4; 
         grid-row-start: 2; 
         grid-row-end: 3; 
-    }
-
-    .relaxing-container> div> img{
-        width: clamp(150px, 200px, 600px); 
-        height: clamp(150px, 180px, 500px); 
-        width: 90%;
-    }
-    .service-fourth-section-container{
-        padding: 20px 0; 
-    }
-    .service-fourth-section-container> p{
-        font-size: clamp(0.9rem, 1.1rem, 1.7rem); 
-        width: 95%; 
     }
 }
 /*About us HTML*/
