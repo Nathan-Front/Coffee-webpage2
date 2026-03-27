@@ -9,7 +9,6 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    background-color: #c89b3c;
 }
 ul{
     list-style:none;
@@ -541,6 +540,7 @@ header img{
     padding: 50px 0;
     justify-content: center;
     justify-items: center;
+    background-color: #c89b3c;
 }
 .third-section-container> h2{
     margin: 0 auto;
