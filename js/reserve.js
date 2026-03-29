@@ -1,30 +1,3 @@
-function reserveSeat(){
-    const reserveBtn = document.getElementById("reserve-button");
-    const loginUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    const userReservationEl = document.querySelector(".user-name-logged");
-    reserveBtn.addEventListener("click", () =>{
-        if(!seatLoc){
-            alert("Select seat");
-            return;
-        }
-        const seatRes = JSON.parse(localStorage.getItem("reserveSeat")) || [];
-        const loggedUserEl = document.querySelector(".logged-in-user");
-        const loggedUser = loggedUserEl.textContent;
-        if(seatRes.some(user => user.user === loggedUser)){
-            alert("This user had already a reservation");
-            return;
-        }
-       document.querySelector(".form-panel-container").style.display = "flex";
-       loggedUserEl.textContent = loginUser;
-       userReservationEl.textContent = loginUser;
-       if(!loginUser){
-        userReservationEl.textContent = "Guest";
-       }
-       document.body.classList.add("no-scroll");
-    });
-        
-}
-document.addEventListener("DOMContentLoaded", reserveSeat);
 
 let seatReserved = 0;
 let seatLoc;
@@ -41,13 +14,6 @@ function selectSeatToReserve(){
             const imgEl = radio.closest("label").querySelector("img");
             const seat = radio.value;          
             const seatRes = JSON.parse(localStorage.getItem("reserveSeat")) || [];
-           /* if (seatRes.some(item => item.seat === seat)) {
-                alert("Seat already reserved");
-                radio.checked = false;
-                 radio.disabled = true;  
-                imgEl.src = getSelectedImg(imgEl);
-                return;
-            }*/
             if (lastChecked && lastChecked !== radio) {
                 const prevImg = lastChecked.closest("li").querySelector("img");
                 prevImg.src = getDefaultImg(prevImg);
@@ -55,9 +21,52 @@ function selectSeatToReserve(){
             imgEl.src = getSelectedImg(imgEl);
             lastChecked = radio;
             seatLoc = seat;
+            console.log("Selected seat:", seatLoc);
         });
     });
 }
+document.addEventListener("DOMContentLoaded", selectSeatToReserve);
+function reserveSeat(){
+    const reserveBtn = document.getElementById("reserve-button");
+    
+    reserveBtn.addEventListener("click", async () =>{
+      const loginUser = JSON.parse(localStorage.getItem("loggedInUser"));
+        if(!seatLoc){
+            alert("Select seat");
+            return;
+        }
+        if (!document.querySelector(".form-panel-container")) {
+          const response = await fetch("reservationForm.html");
+          const reservationFormHTML = await response.text();
+          document.body.insertAdjacentHTML("beforeend", reservationFormHTML);
+          initReservationForm();
+          getMarkedSeat();
+        }
+
+        const userReservationEl = document.querySelector(".user-name-logged");
+        const loggedUserEl = document.querySelector(".logged-in-user");
+        if (loggedUserEl) loggedUserEl.textContent = loginUser || "Guest";
+        if (userReservationEl) userReservationEl.textContent = loginUser || "Guest";
+
+        const seatRes = JSON.parse(localStorage.getItem("reserveSeat")) || [];
+       
+        if (loggedUserEl) loggedUserEl.textContent = loginUser || "Guest";
+        const loggedUser = loggedUserEl.textContent;
+        if(seatRes.some(user => user.user === loggedUser)){
+            alert("This user had already a reservation");
+            return;
+        }
+        document.querySelector(".form-panel-container").style.display = "flex";
+        loggedUserEl.textContent = loginUser;
+        userReservationEl.textContent = loginUser;
+        if(!loginUser){
+         userReservationEl.textContent = "Guest";
+        }
+        document.body.classList.add("no-scroll");
+    });
+        
+}
+document.addEventListener("DOMContentLoaded", reserveSeat);
 
 function getDefaultImg(img) {
   if (img.src.includes("single")) return "./images/services/reservation/singleseat1.png"; 
@@ -85,63 +94,94 @@ function getSelectedImg(img) {
 function getMarkedSeat(){
     const resSeat = JSON.parse(localStorage.getItem("reserveSeat")) || [];
     if(!resSeat.length) return;
-    const selectedDate = document.querySelector("#inputReserveDate").value;
-    const selectedTime = document.querySelector("#inputReserveTime").value;
-    
-    if (!selectedDate || !selectedTime) return;
-    
-    /* if (!isSaturday(selectedDate)) {
-      alert("Reservations are only allowed on Saturdays.");
-      return;
-    }
-  
-    if (!isTimeAllowed(selectedTime)) {
-      alert("Reservations are only available between 15:00 and 19:00.");
-      return;
-    }*/
+
+    const dateEl = document.querySelector("#inputReserveDate");
+    const timeEl = document.querySelector("#inputReserveTime");
+
+    // ✅ fallback if form not loaded
+    const selectedDate = dateEl ? dateEl.value : nextSaturday();
+    const selectedTime = timeEl ? timeEl.value : "15:00";
+
     const usedSeats = getUsedSeats(selectedDate, selectedTime);
+
     const radios = document.querySelectorAll(
-    ".single-window-table input[type='radio'], \
-     .double-seat-window-table input[type='radio'], \
-     .group-center-table input[type='radio']"
+      ".single-window-table input[type='radio'], \
+       .double-seat-window-table input[type='radio'], \
+       .group-center-table input[type='radio']"
     );
-    
+
     radios.forEach(radio =>{
         const li = radio.closest("li");
         const imgEl = radio.closest("label").querySelector("img");
         const spanEl = li.querySelector("span");
         const seatId = radio.value;
+
         const used = usedSeats[seatId] || 0;
         const capacity = getSeatCapacity(radio);
         const available = Math.max(0, capacity - used);
-        // mark reserved
+
         if (used > 0) {
-           imgEl.src = getSelectedImg(imgEl);
-  radio.disabled = true;
-  //li.classList.add("seat-full");
+          console.log("Marking reserved:", seatId);
+          imgEl.src = getSelectedImg(imgEl);
+          radio.disabled = true;
+          li.classList.add("seat-full");
         }
-        // display availability (For share tables only)
+
         if (used > 0 && capacity > 2) {
             spanEl.textContent = available > 0
-            ? `${available} seat${available !== 1 ? "s" : ""} left` : "Full";
+            ? `${available} seat${available !== 1 ? "s" : ""} left`
+            : "Full";
         }
+
         if (available === 0 && used > 0) {
             radio.disabled = true;
             li.classList.add("seat-full");
         }
     });
 }
+
+/*
 document.addEventListener("DOMContentLoaded", () => {
-const dateInput = document.querySelector("#inputReserveDate");
+  const dateInput = document.querySelector("#inputReserveDate");
   const timeInput = document.querySelector("#inputReserveTime");
+  if(!dateInput || !timeInput) return;
   dateInput.value = nextSaturday();
   timeInput.value = "15:00";
   getMarkedSeat();
-   dateInput.addEventListener("change", getMarkedSeat);
-timeInput.addEventListener("change", getMarkedSeat);
+  dateInput.addEventListener("change", getMarkedSeat);
+  timeInput.addEventListener("change", getMarkedSeat);
   
   selectSeatToReserve(); 
-});
+});*/
+
+function initReservationForm() {
+  const dateInput = document.querySelector("#inputReserveDate");
+  const timeInput = document.querySelector("#inputReserveTime");
+
+  if (!dateInput || !timeInput) return;
+
+  dateInput.value = nextSaturday();
+  timeInput.value = "15:00";
+
+  dateInput.addEventListener("change", getMarkedSeat);
+  timeInput.addEventListener("change", getMarkedSeat);
+
+  dateInput.addEventListener("change", () => {
+    if (!isSaturday(dateInput.value)) {
+      alert("Reservations are only available on Saturdays.");
+      dateInput.value = "";
+    }
+  });
+
+  timeInput.addEventListener("change", () => {
+    if (!isTimeAllowed(timeInput.value)) {
+      alert("Reservations are only available between 13:00 and 19:00.");
+      timeInput.value = "";
+    }
+  });
+  reserveButton();
+  closeReservePanel();
+}
 
 const SEAT_TYPE_CAPACITY = {
     four: 4,
@@ -155,7 +195,7 @@ function getSeatCapacity(radio) {
     return SEAT_TYPE_CAPACITY[seatType] || 1;
 }
 function getUsedSeats(date, time) {
-    const data = JSON.parse(localStorage.getItem("reserveSeat")) || [];
+  const data = JSON.parse(localStorage.getItem("reserveSeat")) || [];
   const seatMap = {};
 
   data.forEach(item => {
@@ -173,14 +213,17 @@ function isSaturday(dateStr) {
   const date = new Date(dateStr);
   return date.getDay() === 6;
 }
-const dateInput = document.querySelector("#inputReserveDate");
 
+function dateInputChangeHandler() {
+const dateInput = document.querySelector("#inputReserveDate");
 dateInput.addEventListener("change", () => {
   if (!isSaturday(dateInput.value)) {
     alert("Reservations are only available on Saturdays.");
     dateInput.value = "";
   }
 });
+}
+
 function saveReservation(reservation) {
   if (!isSaturday(reservation.dateReserve)) {
     alert("Only Saturdays are allowed.");
@@ -201,11 +244,12 @@ function nextSaturday() {
   d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7));
   return d.toISOString().split("T")[0];
 }
-dateInput.value = nextSaturday();
+
 const ALLOWED_TIME = {
   start: "13:00",
   end: "19:00"
 };
+
 function isTimeAllowed(timeStr) {
   if (!timeStr) return false;
   const toMinutes = t => {
@@ -218,23 +262,29 @@ function isTimeAllowed(timeStr) {
     t <= toMinutes(ALLOWED_TIME.end)
   );
 }
-const timeInput = document.querySelector("#inputReserveTime");
-timeInput.addEventListener("change", () => {
+//const timeInput = document.querySelector("#inputReserveTime");
+function timeInputChangeHandler() {
+  const timeInput = document.querySelector("#inputReserveTime");
+  if(!timeInput) return;
+  timeInput.addEventListener("change", () => {
   if (!isTimeAllowed(timeInput.value)) {
     alert("Reservations are only available between 15:00 and 19:00.");
     timeInput.value = "";
   }
 });
+}
+
 
 function reserveButton(){
-    const reserveBtn = document.querySelector(".submit-reserve-button");
+  const reserveBtn = document.querySelector(".submit-reserve-button");
   const person = document.getElementById("selectNumber");
   const dateReservation = document.getElementById("inputReserveDate");
   const timeReservation = document.getElementById("inputReserveTime");
   const userContact = document.getElementById("inputContact");
   const userEmail = document.getElementById("inputEmail");
-
-  reserveBtn.addEventListener("click", () => {
+  if(!reserveBtn) return;
+  reserveBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     const loginUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
     if (!loginUser) {
@@ -258,9 +308,9 @@ function reserveButton(){
 
     //const usedSeats = getUsedSeats();
     const usedSeats = getUsedSeats(
-  dateReservation.value,
-  timeReservation.value
-);
+      dateReservation.value,
+      timeReservation.value
+    );
     const capacity = getSeatCapacity(radio);
     const used = usedSeats[seatLoc] || 0;
     const personCount = Number(person.value);
@@ -284,18 +334,26 @@ function reserveButton(){
     const existing = JSON.parse(localStorage.getItem("reserveSeat")) || [];
     existing.push(reservation);
     localStorage.setItem("reserveSeat", JSON.stringify(existing));
-
+    getMarkedSeat();      // refresh reserved seats
+selectSeatToReserve();
     alert("Reservation saved successfully!");
   });
 }
-reserveButton();
+document.addEventListener("DOMContentLoaded", reserveButton);
 function closeReservePanel(){
     const closePanelBtn = document.querySelector(".close-reserve-button");
+    if(!closePanelBtn) return;
     closePanelBtn.addEventListener("click", () =>{
         document.querySelector(".form-panel-container").style.display = "none";
         document.body.classList.remove("no-scroll");
     });
 }closeReservePanel();
+
+document.addEventListener("DOMContentLoaded", () => {
+  selectSeatToReserve();
+  reserveSeat();
+  getMarkedSeat();
+});
 
 
 

@@ -1,0 +1,49 @@
+<div class="form-panel-container">
+  <h3 class="user-name-logged">Guest user</h3>
+  <form id="reserveForm">
+    <label for="selectNumber">Enter number of person</label>
+    <select name="selectNumber" id="selectNumber">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+    <label for="inputReserveDate">Reserve Date</label>
+    <input
+      type="date"
+      id="inputReserveDate"
+      placeholder="enter date"
+      required
+    />
+    <label for="inputReserveTime">Reserve Date</label>
+    <input
+      type="time"
+      id="inputReserveTime"
+      placeholder="enter time"
+      min="15:00"
+      max="19:00"
+      step="3600"
+      required
+    />
+    <label for="inputContact">Contact Number</label>
+    <input
+      type="text"
+      id="inputContact"
+      placeholder="Input contact number"
+      required
+    />
+    <label for="inputEmail">Email Address (Optional)</label>
+    <input type="text" id="inputEmail" placeholder="Input email address" />
+    <br />
+    <div class="reserve-button-container">
+      <input type="submit" value="submit" class="submit-reserve-button" />
+      <input type="button" value="Close" class="close-reserve-button" />
+    </div>
+  </form>
+</div>

@@ -25,14 +25,21 @@ function mobileNavigationBtn(){
     const userBtn = e.target.closest("#mobile-user-button");
     if(userBtn){
       toUser();
+      burgerClose();
+      document.body.classList.add("no-scroll");
     }
 
-
-    const burgerBtn = e.target.closest("#burger");
-    if(burgerBtn){
+    const burgerOpenBtn = e.target.closest("#burger");
+    if(burgerOpenBtn) {
+      toSignupForm();
       burgerContent();
+      document.body.classList.add("no-scroll");
     }
-
+    const burgerCloseBtn = e.target.closest("#burger-close");
+    if(burgerCloseBtn) {
+      burgerClose();
+      document.body.classList.remove("no-scroll");
+    }
   });
 }
 
@@ -120,6 +127,7 @@ async function toUser(){
         removeExistingUserDisplay();
         userBtn.disabled = false; //Need this flag to re-enable the button
       });
+      document.body.classList.add("no-scroll");
     /*When user is not logged in*/ 
     }else{
       const inputField = await fetch("./login.html"); //Get the login html content
@@ -140,7 +148,6 @@ async function toUser(){
 //  });
   closeBtn.addEventListener("click", () =>{
     //inputFieldContainer.classList.remove("activeInput");
-    
     setTimeout(() => { //Delay to allow CSS transition
       removeExistingFetched();
       userBtn.disabled = false; //Need this flag to re-enable the button
@@ -156,6 +163,7 @@ function removeExistingUserDisplay() {
     existing.remove();
     formOpen = false;
   }, 400);
+  document.body.classList.add("no-scroll");
 }
 
 function toSignupForm(){
@@ -204,13 +212,13 @@ async function removeExistingFetched() {
     existing.remove();
     formOpen = false;
   }, 400);
+  document.body.classList.add("no-scroll");
 }
 
 
 async function burgerContent(){
-  const burgerOpen = document.getElementById("burger");
-  const burgerClose = document.getElementById("burger-close");
-  if (burgerOpen) {
+  const burgerOpenBtn = document.getElementById("burger");
+  if(!burgerOpenBtn) return;
     removeExistingFetched();
     removeExistingAboutUs()
     removeExistingUserDisplay();
@@ -219,42 +227,57 @@ async function burgerContent(){
     const aboutUsSection = await fetch("./aboutus.html");
     const aboutUsHtml = await aboutUsSection.text();
     aboutUsContainer.innerHTML = aboutUsHtml;
-    document.body.append(aboutUsContainer);
+     
     const barista = await fetch("./service.html");
-    const HTNLtext = await barista.text();
+    const HTMLtext = await barista.text();
     const parser = new DOMParser();
-    const doc = parser.parseFromString(HTNLtext, "text/html");
+    const doc = parser.parseFromString(HTMLtext, "text/html");
     const baristaSection = doc.querySelector(".service-second-section-container");
     aboutUsContainer.append(baristaSection);
-   
+  
     const mobileFooterContainer = await fetch("./mobileFooter.html");
     const mobileFooterHtml = await mobileFooterContainer.text();
     const footerContainer = document.createElement("div");
     footerContainer.innerHTML = mobileFooterHtml;
     aboutUsContainer.append(...footerContainer.children)
-    requestAnimationFrame(() => {
-      aboutUsContainer.offsetHeight; //forces a layout reflow, it locks in the initial state (without .activeInput)
-      aboutUsContainer.classList.add("activeInput");
-    });
-    if (userBtn) userBtn.disabled = false;
-    burgerOpen.style.display = "none";
-    burgerClose.style.display = "flex";
-  }
-  
-  if(burgerClose){
-  burgerClose.addEventListener("click", () =>{
+    document.body.append(aboutUsContainer);
+   
+    animateSlideIn(aboutUsContainer);
+
+ if (userBtn) userBtn.disabled = false;
+    const burgerCloseBtn = document.getElementById("burger-close");
+    burgerOpenBtn.style.display = "none";
+    burgerCloseBtn.style.display = "flex";
+
+    
+}
+function animateSlideIn(el){
+  el.classList.remove("activeBurger");
+  setTimeout(() => {
+    el.classList.add("activeBurger");
+  }, 10);
+}
+function burgerClose(){
+  const burgerCloseBtn = document.getElementById("burger-close");
+  if(burgerCloseBtn){
     removeExistingAboutUs();
-    burgerOpen.style.display = "flex";
-    burgerClose.style.display = "none";
-  });
+    const burgerOpenBtn = document.getElementById("burger");
+    burgerOpenBtn.style.display = "flex";
+    burgerCloseBtn.style.display = "none";
   }
-
-
+}
+function existingAboutUs(el) {
+   const existing = document.querySelector(".about-us-mobile-container");
+    if (!existing) return;
+    existing.classList.remove("activeBurger");
+    setTimeout(() => { //Delay to allow CSS transition
+        existing.add();
+      }, 400);
 }
 function removeExistingAboutUs() {
   const existing = document.querySelector(".about-us-mobile-container");
     if (!existing) return;
-    existing.classList.remove("activeInput");
+    existing.classList.remove("activeBurger");
     setTimeout(() => { //Delay to allow CSS transition
         existing.remove();
       }, 400);

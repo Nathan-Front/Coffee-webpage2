@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="style/reservation.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -16,7 +17,7 @@
     <div class="header-nav-container">
       <header>
         <img src="images/index/logo/coffee-cup.png" alt="webpage-logo" />
-        <h1>UrKofi</h1>
+        <h1 class="web-name">UrKofi</h1>
       </header>
       <nav class="webpage-navigation">
         <ul>
@@ -40,7 +41,7 @@
         </div>
       </nav>
     </div>
-    <main>
+    <main id="reservation-main">
       <div class="single-seat-window">
         <h3>window side</h3>
       </div>
@@ -258,59 +259,7 @@
           </ul>
         </div>
       </div>
-      <div class="form-panel-container">
-        <h3 class="user-name-logged">Guest user</h3>
-        <form id="reserveForm">
-          <label for="selectNumber">Enter number of person</label>
-          <select name="selectNumber" id="selectNumber">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-          <label for="inputReserveDate">Reserve Date</label>
-          <input
-            type="date"
-            id="inputReserveDate"
-            placeholder="enter date"
-            required
-          />
-          <label for="inputReserveTime">Reserve Date</label>
-          <input
-            type="time"
-            id="inputReserveTime"
-            placeholder="enter time"
-            min="15:00"
-            max="19:00"
-            step="3600"
-            required
-          />
-          <label for="inputContact">Contact Number</label>
-          <input
-            type="text"
-            id="inputContact"
-            placeholder="Input contact number"
-            required
-          />
-          <label for="inputEmail">Email Address (Optional)</label>
-          <input
-            type="text"
-            id="inputEmail"
-            placeholder="Input email address"
-          />
-          <br />
-          <div class="reserve-button-container">
-            <input type="submit" value="submit" class="submit-reserve-button" />
-            <input type="button" value="Close" class="close-reserve-button" />
-          </div>
-        </form>
-      </div>
+
       <div class="entrance-exit">
         <button type="button" id="reserve-button">Reserve now</button>
         <h3>Entrance/Exit</h3>
@@ -438,7 +387,7 @@
         </div>
       </div>
     </footer>
-    <script src="js/fetchHTML.js" defer></script>
+    <script src="js/fetchMobileNav.js" defer></script>
     <script src="js/hashPassword.js" defer></script>
     <script src="js/login.js" defer></script>
     <script src="js/signup.js" defer></script>
