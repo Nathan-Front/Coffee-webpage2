@@ -181,11 +181,11 @@ function toSignupForm(){
     removeExistingFetched();
     removeExistingAboutUs();
     //removeExistingUserDisplay();
-    const toSignupForm = e.target.closest("#mobile-signup-form");
+    //const toSignupForm = e.target.closest("#mobile-signup-form");
     
     closeBtn.className = "close-signup-form";
     closeBtn.textContent = "X";
-    if (!toSignupForm) return;
+   // if (!toSignupForm) return;
     const signupForm = await fetch("./signup.html"); //Get the signup html content
     const signupFormContainer = document.createElement("div");
     signupFormContainer.className = "input-field-container";
@@ -206,7 +206,7 @@ function toSignupForm(){
       setTimeout(() => { //Delay to allow CSS transition
       removeExistingFetched();
       userBtn.disabled = false; //Need this flag to re-enable the button
-    }, 400); 
+    }, 10); 
     });
   });
 }

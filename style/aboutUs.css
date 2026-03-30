@@ -165,7 +165,6 @@ iframe{
 }*/
 @media only screen and (max-width: 599px){
     .about-us-content-image-container{
-        
         margin: 1em auto 0 auto; 
     }
     .about-us-content-image-container> h2{
@@ -201,7 +200,7 @@ iframe{
         width: 90%; 
         flex-direction: row; 
         gap: 1em; 
-        margin: 0 auto; 
+        margin: 20px auto 0 auto; 
     }
     .mission> h3,
     .vission> h3{

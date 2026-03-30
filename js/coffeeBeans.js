@@ -23,7 +23,6 @@ window.addEventListener('load', () => {
   imageChanger();
 });
 
-
 function coffeeMonthAddToCart(){
     const coffeeMonthAddToCartBtn = document.getElementById("coffee-month-add-to-cart-btn");
     const coffeeMonthItemEl = document.getElementById("coffee-month-item");
