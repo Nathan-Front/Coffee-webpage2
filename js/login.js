@@ -41,7 +41,6 @@ window.loginUser = function loginUser(){
         rememberMe.checked = true;
     }
     
-
     document.addEventListener("DOMContentLoaded", () =>{//To keep display even when page is reloaded
         const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
         const displayUsername = document.querySelectorAll(".logged-in-user");
@@ -51,8 +50,7 @@ window.loginUser = function loginUser(){
             displayUsername.forEach(el => el.textContent = "Guest");
         }
     });
-
-    }
+}
 
 function alreadyLog(){//Allow only access to login page if not logged in 
     const loginBtn = document.querySelectorAll(".to-login-html-button");
@@ -72,13 +70,11 @@ document.addEventListener("DOMContentLoaded", alreadyLog);
 
 function displayUser(forceValue){//Display username 
     const user = forceValue ?? JSON.parse(localStorage.getItem("loggedInUser")) ?? "Guest";
-
     document.querySelectorAll(".logged-in-user").forEach(el => {
         el.textContent = user;
     });
 }
 document.addEventListener("DOMContentLoaded", () => {displayUser(); loginUser();});
-
 
 function logoutUser(){//Delete localstorage of logged user
     localStorage.removeItem("loggedInUser");
@@ -104,7 +100,6 @@ e.addEventListener("mouseenter", () =>{
         }
     });
  })
-    
 }
 document.addEventListener("DOMContentLoaded", hoverUserName);
 

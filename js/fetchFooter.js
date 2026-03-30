@@ -5,6 +5,5 @@ async function fetchFoot(){
   const resFoot = await fetch("footer.html");
   const footHTML = await resFoot.text();
   main.insertAdjacentHTML("afterend", footHTML)
-
 }
 document.addEventListener("DOMContentLoaded", fetchFoot);

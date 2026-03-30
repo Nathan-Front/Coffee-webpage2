@@ -1,6 +1,4 @@
 
-
-
 let mobileNavBound = false;
 function mobileNavigationBtn(){
   if(window.innerWidth > 599) return; 
@@ -182,7 +180,6 @@ function toSignupForm(){
     removeExistingAboutUs();
     //removeExistingUserDisplay();
     //const toSignupForm = e.target.closest("#mobile-signup-form");
-    
     closeBtn.className = "close-signup-form";
     closeBtn.textContent = "X";
    // if (!toSignupForm) return;
@@ -222,7 +219,6 @@ async function removeExistingFetched() {
   document.body.classList.add("no-scroll");
 }
 
-
 async function burgerContent(){
   const burgerOpenBtn = document.getElementById("burger");
   if(!burgerOpenBtn) return;
@@ -257,15 +253,15 @@ async function burgerContent(){
     const burgerCloseBtn = document.getElementById("burger-close");
     burgerOpenBtn.style.display = "none";
     burgerCloseBtn.style.display = "flex";
-
-    
 }
+
 function animateSlideIn(el){
   el.classList.remove("activeBurger");
   setTimeout(() => {
     el.classList.add("activeBurger");
   }, 10);
 }
+
 function burgerClose(){
   const burgerCloseBtn = document.getElementById("burger-close");
   if(burgerCloseBtn){
@@ -275,6 +271,7 @@ function burgerClose(){
     burgerCloseBtn.style.display = "none";
   }
 }
+
 function existingAboutUs() {
    const existing = document.querySelector(".about-us-mobile-container");
     if (!existing) return;
@@ -283,6 +280,7 @@ function existingAboutUs() {
         existing.add();
       }, 400);
 }
+
 function removeExistingAboutUs() {
   const existing = document.querySelector(".about-us-mobile-container");
     if (!existing) return;

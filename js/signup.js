@@ -1,5 +1,4 @@
 
-
 window.signUp = function signUp() {
     const form = document.getElementById('signup-form');
   if (!form) return; 
@@ -66,17 +65,17 @@ window.signUp = function signUp() {
 } 
 //For mobileviewport login form opening after signup
 async function openLoginForm() {
-  removeExistingFetched();
-  removeExistingAboutUs();
-  const inputFieldContainer = document.createElement("div");
-  inputFieldContainer.className = "input-field-container";
-  const logiForm = await fetch("login.html");
-  inputFieldContainer.innerHTML = await logiForm.text();
-  document.body.append(inputFieldContainer);
-  loginUser();
-  requestAnimationFrame(() => {
-    inputFieldContainer.classList.add("activeInput");
-  });
+    removeExistingFetched();
+    removeExistingAboutUs();
+    const inputFieldContainer = document.createElement("div");
+    inputFieldContainer.className = "input-field-container";
+    const logiForm = await fetch("login.html");
+    inputFieldContainer.innerHTML = await logiForm.text();
+    document.body.append(inputFieldContainer);
+    loginUser();
+    requestAnimationFrame(() => {
+      inputFieldContainer.classList.add("activeInput");
+    });
 }
 //email validator
 function validateEmail(email) {

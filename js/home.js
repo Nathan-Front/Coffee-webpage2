@@ -23,16 +23,13 @@ function coffeeSelector(){
 }
 
 //For the images height adjustment in second section
-
 function adjustImagesByTextHeight() {
     const block = document.querySelector(".coffee-selection-text.selectedCoffee");
   if (!block) return;
-
   const p = block.querySelector("p");
   if (!p) return;
 
   const textHeight = p.scrollHeight;
-
   block.classList.remove("small-text", "medium-text", "large-text");
 
   if (textHeight > 120) {
@@ -42,7 +39,6 @@ function adjustImagesByTextHeight() {
   } else {
     block.classList.add("small-text");
   }
-  
 }
 window.addEventListener("resize", adjustImagesByTextHeight);
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -157,7 +153,6 @@ function updateCarousel() {
     testimonyContainer.style.transform =
       `translateX(${-currentIndex * slideWidth}px)`;
   }
-
   updateActiveDot();*/
 }
 
@@ -204,7 +199,6 @@ function createDots(){
   }
  updateActiveDot();
 }
-
 
 function updateActiveDot(){
   const desktopDots = document.querySelectorAll(".slider-dots button");

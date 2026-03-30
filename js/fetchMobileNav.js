@@ -1,6 +1,4 @@
 
-
-
 let mobileLoaded = false;
 async function fetchMobileNav(){
     const resMobileFoot = await fetch("./mobileNavigation.html");

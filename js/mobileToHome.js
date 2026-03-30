@@ -1,5 +1,4 @@
 
-
 function serviceToHome(){
   if(window.innerWidth <= 599){
     if(window.location.pathname.includes("service.html") 

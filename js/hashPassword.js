@@ -1,6 +1,5 @@
 //Use Built-in API hash of the browser *This is for front-end only no server/DB
 //Does not show the exact password in the localStorage
-
 window.hashPassword = async function hashPassword(password) {
   const encoder = new TextEncoder();
   const data = encoder.encode(password);

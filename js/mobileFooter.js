@@ -6,7 +6,6 @@ async function mobileFooterFetch() {
 }
 document.addEventListener("DOMContentLoaded", mobileFooterFetch);
 
-
 async function mobileFooter(e){
     const mobileAboutUsContainer = e.querySelector(".about-us-body-container");
     if(!mobileAboutUsContainer) return;

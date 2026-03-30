@@ -297,7 +297,6 @@ function addToCartOther(){
                     itemTax: tax
                 });
             //}
-
             //localStorage.setItem("cartContent", JSON.stringify(cartContent));
             cartContent.cartCounter = cartContent.items.reduce((total, item) => total + item.itemQty, 0);
             localStorage.setItem("cartContent", JSON.stringify(cartContent));
@@ -309,7 +308,7 @@ function addToCartOther(){
 document.addEventListener("DOMContentLoaded", addToCartOther);
 
 function itemIncreaseDecrease(){   
-     const cartContainer = document.getElementById("cart-item-display-container");
+    const cartContainer = document.getElementById("cart-item-display-container");
     if (!cartContainer) return;
 
     cartContainer.addEventListener("click", (e) => {
@@ -348,9 +347,7 @@ function itemIncreaseDecrease(){
         );
 
         localStorage.setItem("cartContent", JSON.stringify(cartContent));
-
         document.getElementById("cart-item-counter").textContent = cartContent.cartCounter;
-
         displaySubTotal();
         displayShipFeeTotal();
         displayTax();
@@ -360,7 +357,6 @@ function itemIncreaseDecrease(){
     });
 }
 document.addEventListener("DOMContentLoaded", itemIncreaseDecrease);
-
 
 function deleteFromCart(){
     const cartContainer = document.getElementById("cart-item-display-container");
@@ -388,7 +384,6 @@ function deleteFromCart(){
 document.addEventListener("DOMContentLoaded", deleteFromCart);
 
 function cartPageCounter(){
-    
     let cartContent = JSON.parse(localStorage.getItem("cartContent"));
     if(!cartContent) {
         return ;
@@ -402,7 +397,6 @@ function cartPageCounter(){
 
     itemCount.textContent = count;
     itemLabel.textContent = count === 1 ? "item" : "items";
-    
 }
 document.addEventListener("DOMContentLoaded", cartPageCounter);
 
@@ -520,7 +514,6 @@ function initialItemSlide(){
 
 let coffeeCurrentIndex = 0;
 let coffeeSlideWidth;
-
 function updateCoffeeSlideWidth(){
     //coffeeSlideWidth = coffeeSlides[0].offsetWidth + 20;
   const first = coffeeSlides[0];
@@ -541,36 +534,32 @@ function updateCoffeeCarousel(){
 
 function cofeeSlides(){
     initialItemSlide();
-const coffeePrevBtn = document.querySelector(".coffeePrev");
-const coffeeNextBtn = document.querySelector(".coffeeNext");
-const coffeeMaxIndex = coffeeSlides.length - coffeeVisibleSlides;
+    const coffeePrevBtn = document.querySelector(".coffeePrev");
+    const coffeeNextBtn = document.querySelector(".coffeeNext");
+    const coffeeMaxIndex = coffeeSlides.length - coffeeVisibleSlides;
 
-if(!coffeePrevBtn || !coffeeNextBtn) return;
-coffeePrevBtn.addEventListener("click", () =>{
-    if ( coffeeCurrentIndex <= 0 ) {
-        coffeeCurrentIndex = coffeeMaxIndex;
-    } else {
-        coffeeCurrentIndex--;
-    }
-    updateCoffeeCarousel();
-});
+    if(!coffeePrevBtn || !coffeeNextBtn) return;
+    coffeePrevBtn.addEventListener("click", () =>{
+        if ( coffeeCurrentIndex <= 0 ) {
+            coffeeCurrentIndex = coffeeMaxIndex;
+        } else {
+            coffeeCurrentIndex--;
+        }
+        updateCoffeeCarousel();
+    });
 
-coffeeNextBtn.addEventListener("click", () =>{
-    if ( coffeeCurrentIndex >= coffeeMaxIndex ) {
-        coffeeCurrentIndex = 0;
-    } else {
-        coffeeCurrentIndex++;
-    }
-    updateCoffeeCarousel();
-});
+    coffeeNextBtn.addEventListener("click", () =>{
+        if ( coffeeCurrentIndex >= coffeeMaxIndex ) {
+            coffeeCurrentIndex = 0;
+        } else {
+            coffeeCurrentIndex++;
+        }
+        updateCoffeeCarousel();
+    });
 }
 cofeeSlides();
 
-
-
 const coffeeDots = document.querySelector(".coffee-dots");
-
-
 function coffeeDot(){
     if(!coffeeDots) return;
     let coffeeTotalDots = 0 
@@ -633,7 +622,6 @@ function getCarouselSlideWidth(){
         return {perSlideWidth, fullWidth, wrapWidth};
 }
 
-
 function coffeeBeansCarouselTouch(){
     const carouselWrapper = document.querySelector(".product-sale-list-item-container");
     const coffeeSlides = document.querySelectorAll(".product-sale-item-container");
@@ -676,8 +664,7 @@ function coffeeBeansCarouselTouch(){
         isDragging = false;
         updateCoffeeDot();
         coffeeCurrentIndex = index;
-        coffeeDot();
-        
+        coffeeDot();  
     });
 }
 document.addEventListener("DOMContentLoaded", () => {
@@ -692,8 +679,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("resize", () => {
-   
-   
     if(window.innerWidth <= 599){
         coffeeBeansCarouselTouch();
     } else{
@@ -713,7 +698,6 @@ function repositionCarousel(){
         const {perSlideWidth, fullWidth, wrapWidth} = sizes;
         const centerOffset = (wrapWidth - perSlideWidth) / 2;
         const translateX = -coffeeCurrentIndex * fullWidth + centerOffset;
-
         carouselWrapper.style.transform = `translateX(${translateX}px)`;
     } else {
         updateCoffeeSlideWidth();
