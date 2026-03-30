@@ -25,7 +25,7 @@ window.loginUser = function loginUser(){
             } else {
                 localStorage.removeItem("rememberMe");
             }
-            alert("Login successfull");
+            alert("Login successful.");
             displayUser();
             window.location.href = "index.html";
         } else {
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {displayUser(); loginUser();
 
 function logoutUser(){//Delete localstorage of logged user
     localStorage.removeItem("loggedInUser");
+    alert("Logged out successfully.");
 }
 
 function logoutHandler(){//Handler for user logout

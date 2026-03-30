@@ -97,7 +97,7 @@ async function toUser(){
         const file = profilePicUpload.files[0]; //Get only one picture at a time
         if(!file) return;
 
-        if(!file.type.startsWith('image/')){ //Check if the selected file's MIME type is not an image
+        if(!file.type.startsWith('image/')){ //Check if the selected file's type is not an image
           alert('Select only an image file');
           return;
         }
@@ -116,18 +116,15 @@ async function toUser(){
         reader.readAsDataURL(file);
       });
       const logoutButtonMobile = document.querySelector("#logout-button-mobile");
-      logoutButtonMobile.addEventListener("click", () =>{
-        localStorage.removeItem("loggedInUser");
-        alert("Logged out successfully");
-        loggedUserContainer.remove();
-        userBtn.disabled = false; //Need this flag to re-enable the button
-      });
-      const closeUserInfo = loggedUserContainer.querySelector(".close-input-field-mobile");
-      closeUserInfo.addEventListener("click", () =>{
-        removeExistingUserDisplay();
-        userBtn.disabled = false; //Need this flag to re-enable the button
-      });
-      document.body.classList.add("no-scroll");
+      if (!loggedUserContainer) return;
+      loggedUserContainer.classList.remove("activeInput");
+          logoutButtonMobile.addEventListener("click", () =>{
+            localStorage.removeItem("loggedInUser");
+            alert("Logged out successfully");
+            loggedUserContainer.remove();
+            userBtn.disabled = false; //Need this flag to re-enable the button
+          });
+    closeUserDisplay();
     /*When user is not logged in*/ 
     }else{
       const inputField = await fetch("./login.html"); //Get the login html content
@@ -154,6 +151,16 @@ async function toUser(){
     }, 400); //This is needed to match the CSS transition duration which is 0.4s
   });
 }
+function closeUserDisplay() {
+  const loggedUserContainer = document.querySelector(".logged-user-container");
+      const closeUserInfo = loggedUserContainer.querySelector(".close-input-field-mobile");
+      closeUserInfo.addEventListener("click", () =>{
+        removeExistingUserDisplay();
+        userBtn.disabled = false; //Need this flag to re-enable the button
+      });
+      document.body.classList.add("no-scroll");
+}
+
 function removeExistingUserDisplay() {
   const existing = document.querySelector(".logged-user-container");
   if (!existing) return;
@@ -235,13 +242,15 @@ async function burgerContent(){
     const baristaSection = doc.querySelector(".service-second-section-container");
     aboutUsContainer.append(baristaSection);
   
-    const mobileFooterContainer = await fetch("./mobileFooter.html");
+    const mobileFooterContainer = await fetch("./footer.html");
     const mobileFooterHtml = await mobileFooterContainer.text();
     const footerContainer = document.createElement("div");
     footerContainer.innerHTML = mobileFooterHtml;
     aboutUsContainer.append(...footerContainer.children)
     document.body.append(aboutUsContainer);
-   
+    const footer = document.getElementById("footer");
+    if(!footer) return;
+    footer.style.display = "flex";
     animateSlideIn(aboutUsContainer);
 
  if (userBtn) userBtn.disabled = false;
@@ -266,7 +275,7 @@ function burgerClose(){
     burgerCloseBtn.style.display = "none";
   }
 }
-function existingAboutUs(el) {
+function existingAboutUs() {
    const existing = document.querySelector(".about-us-mobile-container");
     if (!existing) return;
     existing.classList.remove("activeBurger");
@@ -288,4 +297,10 @@ function initFunctions(){
   toSignupForm();
 }
 document.addEventListener("DOMContentLoaded", initFunctions);
-window.addEventListener("resize", initFunctions);
+window.addEventListener("resize", () =>{
+  initFunctions();
+  if(window.innerWidth > 599){
+    burgerClose();
+    document.body.classList.remove("no-scroll");
+  }
+});

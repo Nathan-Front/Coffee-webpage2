@@ -25,7 +25,7 @@ function selectSeatToReserve(){
         });
     });
 }
-document.addEventListener("DOMContentLoaded", selectSeatToReserve);
+
 function reserveSeat(){
     const reserveBtn = document.getElementById("reserve-button");
     
@@ -40,7 +40,7 @@ function reserveSeat(){
           const reservationFormHTML = await response.text();
           document.body.insertAdjacentHTML("beforeend", reservationFormHTML);
           initReservationForm();
-          getMarkedSeat();
+          timeInputStepHandler();
         }
 
         const userReservationEl = document.querySelector(".user-name-logged");
@@ -66,7 +66,6 @@ function reserveSeat(){
     });
         
 }
-document.addEventListener("DOMContentLoaded", reserveSeat);
 
 function getDefaultImg(img) {
   if (img.src.includes("single")) return "./images/services/reservation/singleseat1.png"; 
@@ -95,21 +94,29 @@ function getMarkedSeat(){
     const resSeat = JSON.parse(localStorage.getItem("reserveSeat")) || [];
     if(!resSeat.length) return;
 
-    const dateEl = document.querySelector("#inputReserveDate");
-    const timeEl = document.querySelector("#inputReserveTime");
-
-    // ✅ fallback if form not loaded
-    const selectedDate = dateEl ? dateEl.value : nextSaturday();
-    const selectedTime = timeEl ? timeEl.value : "15:00";
+    const selectedDate = nextSaturday();
+    const selectedTime = "15:00";
 
     const usedSeats = getUsedSeats(selectedDate, selectedTime);
 
     const radios = document.querySelectorAll(
-      ".single-window-table input[type='radio'], \
-       .double-seat-window-table input[type='radio'], \
-       .group-center-table input[type='radio']"
+      ".group-center-table input[type='radio']"
     );
-
+    const singleDoubleRadios = document.querySelectorAll(
+      ".single-window-table input[type='radio'], \
+       .double-seat-window-table input[type='radio']"
+    );
+    singleDoubleRadios.forEach(radio => {
+      const li = radio.closest("li");
+      const imgEl = radio.closest("label").querySelector("img");
+      const seatId = radio.value;
+      const used = usedSeats[seatId] || 0;
+      if (used > 0) {
+        imgEl.src = getSelectedImg(imgEl);
+        radio.disabled = true;
+        li.classList.add("seat-full");
+      }
+    });
     radios.forEach(radio =>{
         const li = radio.closest("li");
         const imgEl = radio.closest("label").querySelector("img");
@@ -120,8 +127,7 @@ function getMarkedSeat(){
         const capacity = getSeatCapacity(radio);
         const available = Math.max(0, capacity - used);
 
-        if (used > 0) {
-          console.log("Marking reserved:", seatId);
+        if (available === 0) {
           imgEl.src = getSelectedImg(imgEl);
           radio.disabled = true;
           li.classList.add("seat-full");
@@ -159,7 +165,7 @@ function initReservationForm() {
   const timeInput = document.querySelector("#inputReserveTime");
 
   if (!dateInput || !timeInput) return;
-
+  timeInput.step = 900;
   dateInput.value = nextSaturday();
   timeInput.value = "15:00";
 
@@ -181,6 +187,7 @@ function initReservationForm() {
   });
   reserveButton();
   closeReservePanel();
+  console.log("Time step:", timeInput.step);
 }
 
 const SEAT_TYPE_CAPACITY = {
@@ -246,7 +253,7 @@ function nextSaturday() {
 }
 
 const ALLOWED_TIME = {
-  start: "13:00",
+  start: "15:00",
   end: "19:00"
 };
 
@@ -273,6 +280,20 @@ function timeInputChangeHandler() {
   }
 });
 }
+function timeInputStepHandler() {
+  const timeInput = document.getElementById("inputReserveTime");
+  if (!timeInput) return;
+
+  timeInput.addEventListener("change", () => {
+    const [hour, minute] = timeInput.value.split(":").map(Number);
+
+    if (minute % 15 !== 0) {
+      alert("Please select time in 15 minute increments (00, 15, 30, 45).");
+      timeInput.value = "";
+    }
+  });
+}
+
 
 
 function reserveButton(){
@@ -283,8 +304,8 @@ function reserveButton(){
   const userContact = document.getElementById("inputContact");
   const userEmail = document.getElementById("inputEmail");
   if(!reserveBtn) return;
-  reserveBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+  reserveBtn.addEventListener("click", () => {
+    
     const loginUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
     if (!loginUser) {
@@ -334,12 +355,13 @@ function reserveButton(){
     const existing = JSON.parse(localStorage.getItem("reserveSeat")) || [];
     existing.push(reservation);
     localStorage.setItem("reserveSeat", JSON.stringify(existing));
-    getMarkedSeat();      // refresh reserved seats
-selectSeatToReserve();
+
     alert("Reservation saved successfully!");
+    document.querySelector(".form-panel-container").style.display = "none";
+    document.body.classList.remove("no-scroll");
   });
 }
-document.addEventListener("DOMContentLoaded", reserveButton);
+
 function closeReservePanel(){
     const closePanelBtn = document.querySelector(".close-reserve-button");
     if(!closePanelBtn) return;
@@ -350,10 +372,9 @@ function closeReservePanel(){
 }closeReservePanel();
 
 document.addEventListener("DOMContentLoaded", () => {
+  reserveButton();
   selectSeatToReserve();
   reserveSeat();
   getMarkedSeat();
 });
-
-
 

@@ -194,11 +194,11 @@ header img{
     .input-field-container{
         position: fixed;
         inset: 0;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         top: 0;
         left: 0;
-        background-color: goldenrod;
+        background-color: white;
         z-index: 99;
         transform: translateX(100%);
         opacity: 0;
@@ -206,7 +206,7 @@ header img{
         overflow-x: auto;
     }
     .logged-user-container{
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         transform: translateX(100%);
         opacity: 0;
@@ -1038,10 +1038,70 @@ footer{
 .payment-cards{
     width: clamp(30px, 3vw, 60px);
 }
+.mobile-media-images{
+    display: none;
+}
 @media only screen and (max-width: 599px){
     footer{
         display: none;
     }
+    .mobile-footer-wraper{
+        width: 100%;
+        display: flex;
+    }
+    .footer-first-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 0;
+    }
+    .footer-page-links{
+        width: 90%;
+        margin: 0 auto;
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    .footer-links-title{
+        width: 20%;
+        margin: auto 0;
+    }
+    .mobile-media{
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    .mobile-media-images{
+        display: block;
+        width: 30px;
+    }
+    .social-text{
+        display: none;
+    }
+    .footer-logo-container,
+    .mobile-links{
+        display: none !important;
+    }
+    .mobile-footer-contacts{
+        gap: 10px !important;
+    }
+    .footer-second-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        padding: 10px 0 60px 0;
+    }
+    .footer-reserved{
+        margin-left: unset;
+    }
+    .footer-second-container > p{
+        color: whitesmoke;
+    }
+    .payment-methods{
+        margin: unset;
+    }
+    .footer-second-container-images{
+        margin-right: unset;
+    }  
 }
 @media (min-width: 600px) and (max-width: 768px){
     footer{
@@ -1052,7 +1112,5 @@ footer{
         width: 95%; 
         margin: 0 auto; 
     }
-
-
- 
 }
+
